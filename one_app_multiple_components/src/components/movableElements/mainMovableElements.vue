@@ -25,9 +25,17 @@
                    :selected="element.selected"
                    :mouse-pos-x="mousePosX" :mouse-pos-y="mousePosY"
                    @dblclick="resize(element)" :parent-key-event="keyEvent"
+                   @elementCenterXY="setElementCenterXY"
 
   >
 </circle-element>
+
+  <lasso-elements-selector :mouse-pos-x="mousePosX" :mouse-pos-y="mousePosY"
+                           :selecting="lassoSelecting"
+                           @lassoSelectorDone="lassoSelectElements"
+  >
+
+  </lasso-elements-selector>
 
 
 <!--    <square-element  v-for="element in elements.square"-->
@@ -62,12 +70,13 @@ import squareElement from "@/components/movableElements/squareElement";
 import rectangleElement from "@/components/movableElements/rectangleElement";
 import CircleElement from "@/components/movableElements/circleElement";
 import elementsBrowser from "@/components/movableElements/elementsBrowser";
+import lassoElementsSelector from "@/components/movableElements/lassoElementsSelector";
 
 
 export default {
 name: "mainMovableElements",
   components:{CircleElement, squareElement,
-    rectangleElement, elementsBrowser},
+    rectangleElement, elementsBrowser, lassoElementsSelector},
   data(){
   return {
     mousePosX: 0,
@@ -86,10 +95,11 @@ name: "mainMovableElements",
     },
     selectedItems: {},
     multipleSelected: false,
-    dragging: false,
-    draggingIntervalId: null,
+    lassoSelecting: false,
     keyEvent: 'none',
     moving: false,
+    lassoInProgress: false,
+    afterLassoIntervalId: null,
 
   }
   },
@@ -207,6 +217,7 @@ name: "mainMovableElements",
             moving: false,
             resizing: false,
             backgroundColor: this.elementsDefaultBackgroundColors[type],
+            centerXY: {},
       }
       this.elements[type][elementId] = elementData
       this.elementsHighestId += 1
@@ -231,26 +242,61 @@ name: "mainMovableElements",
     executeParentMouseDown(eventOriginal){
       var event = eventOriginal;
       console.log('parent mouse down')
-      if (event.button == 0 && !event.shiftKey) {
-        this.moveSelectedElements(true)
-      }
+      this.lassoSelecting = true;
+      // if (event.button == 0 && !event.shiftKey) {
+      //   this.moveSelectedElements(true)
+      // }
     },
     executeParentMouseUp(eventOriginal){
       console.log('parent mouse up')
       var event = eventOriginal;
-      if (event.button == 0 && !event.shiftKey) {
-        this.moveSelectedElements(false);
-      }
+      this.lassoSelecting = false;
+      // if (event.button == 0 && !event.shiftKey) {
+      //   this.moveSelectedElements(false);
+      // }
 
     },
     executeParentClick(event) {
       console.log('parent mouse click')
-      this.deSelectAllElements();
+      if (!this.lassoInProgress){
+        this.deSelectAllElements();
+      }
+
     },
-    stopDragging(){
-      this.dragging = false
-      clearInterval(this.draggingIntervalId)
+
+    lassoSelectElements(lassoEdges){
+      console.log(lassoEdges);
+      if (lassoEdges.w >0 && lassoEdges.h >0) {
+        for (const [type, els] of Object.entries(this.elements)) {
+          for (const [id, elData] of Object.entries(this.elements[type])) {
+            var elCenterXY = this.elements[type][id]['centerXY'];
+
+            if (elCenterXY.x >= lassoEdges.x && elCenterXY.x <= (lassoEdges.x + lassoEdges.w)) {
+              if (elCenterXY.y >= lassoEdges.y && elCenterXY.y <= (lassoEdges.y + lassoEdges.h)) {
+                if (!this.elements[type][id]['selected']) {
+                  this.elements[type][id]['selected'] = true;
+                  this.selectedItems[id] = elData;
+                }
+
+              }
+            }
+          }
+        }
+
+        this.lassoInProgress = true;
+        this.afterLassoIntervalId = setInterval(() => {
+          this.resetLassoFlag();
+        }, 100);
+      }
     },
+    resetLassoFlag(){
+      this.lassoInProgress = false;
+      clearInterval(this.afterLassoIntervalId);
+    },
+    setElementCenterXY(elData){
+      this.elements[elData.type][elData.id]['centerXY'] = elData.centerXY;
+    },
+
     resize(element){
       element.selected = false;
       element.resizing = true;

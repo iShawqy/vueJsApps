@@ -88,6 +88,11 @@ name: "circleElement",
       border: 'none'
     },
     elementKeyEvent: null,
+    type: 'circle',
+    centerXY: {
+      x:0,
+      y:0
+    },
   }
   },
   mounted () {
@@ -97,6 +102,9 @@ name: "circleElement",
             setElementPos(){
             this.baseStyle.left = this.elementPosX.toString() + 'px';
             this.baseStyle.top = this.elementPosY.toString() + 'px';
+            this.centerXY.x = this.elementPosX;
+            this.centerXY.y = this.elementPosY;
+            this.emitElementCenterXY()
             },
             // executeMouseDown(event){
             //   if (event.button == 0 && !this.multipleSelected) {
@@ -116,8 +124,20 @@ name: "circleElement",
                 }, 25);
             },
             stopMoving(){
-                clearInterval(this.movingIntervalId)
+                this.centerXY.x = parseInt(this.baseStyle.left.split("px")[0]);
+                this.centerXY.y = parseInt(this.baseStyle.top.split("px")[0]);
+                this.emitElementCenterXY()
+                clearInterval(this.movingIntervalId);
+
               },
+            emitElementCenterXY(){
+              var elData = {
+                  id: this.id,
+                  type: this.type,
+                  centerXY: this.centerXY,
+                }
+                this.$emit('elementCenterXY', elData);
+            },
             move(){
               if (this.moving){
                 this.elementPosX = this.mousePosX - this.offsetX;
@@ -126,20 +146,7 @@ name: "circleElement",
                 this.baseStyle.left = this.elementPosX.toString() +'px';
               }
               },
-            // editElementProps(){
-            //   this.selectElement(false)
-            //   if (this.adjustable) {
-            //     this.editingFlag = true;
-            //     this.originalWidth = this.baseStyle.width;
-            //     // this.baseStyle.width = '50px';
-            //     this.baseStyle.border = '5px dashed black'
-            //     this.startPosX = this.mousePosX;
-            //     this.startPosY = this.mousePosY;
-            //     this.editingIntervalId = setInterval(() => {
-            //             this.resize();
-            //           }, 25);
-            //   }
-            // },
+
 
             setSize(){
               this.stopResizing();
@@ -226,10 +233,7 @@ name: "circleElement",
         this.stopMoving()
       }
     },
-    // ParentKeyEvent(oldValue, newValue){
-    //   console.log(newValue);
-    //   this.elementKeyEvent = newValue;
-    // },
+
 
 
   }
