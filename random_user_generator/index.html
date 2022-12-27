@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Random User Generator</title>
+</head>
+<body>
+<div id="app">
+    <div class="navigation-bar">
+    <img v-bind:class="gender" v-bind:src="picture" v-bind:alt="`${firstName} ${lastName}`" />
+
+    </div>
+
+
+    <div class="column-1">
+
+        <h1>Hello {{ firstName }} {{ lastName }} {{prefix}}</h1>
+        <h3>Email: {{ email }}</h3>
+        <h3>Timer since start: {{ timer }} seconds</h3>
+        <button v-bind:class="gender">Get User</button>
+    <button v-on:click="reset_timer">Reset timer</button>
+
+    </div>
+
+    <canvas id="myCanvas" :width="canvas_width" :height="canvas_height">
+    </canvas>
+
+
+
+
+
+
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>I love Vue.js</title>
+</head>
+<body>
+<div id="app" >
+
+    <div v-on:mousemove="getCoordinates">
+        <img v-bind:src="src" v-bind:alt="alt"/>
+        <hr/>
+            <a v-bind:href="link" target="_blank">Go to google</a>
+        <hr/>
+
+        <p v-show="checkUser()">
+            show it
+        </p>
+        <p v-show="false">
+            do not show
+        </p>
+        <ul v-once>
+            <li  v-for="(car,index) in cars">
+                    {{ car.brand }} : {{ car.color }} : {{ index }}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(car,index) in cars">
+                    {{ car.brand }} : {{ car.color }} : {{ index }}
+            </li>
+        </ul>
+
+        <p v-on:click="update_values('yoo', $event)" v-on:mousemove="getCoordinates">
+            Click me!
+        </p>
+        <p >
+            x: {{x}}
+            y: {{y}}
+            shift key pressed: {{shiftKeyPressed}}
+        </p>
+
+
+         <input type="text" v-on:keyup="showEvent"/>
+
+
+        <form v-on:submit.prevent="formHandler">
+
+            <label>Name:</label>
+            <input type="text" v-model.trim.lazy="formData.firstname"/>
+            <hr/>
+            <label>Lastname:</label>
+            <input type="text" v-model.trim="formData.lastname"/>
+            <hr/>
+            <label>Age:</label>
+            <input type="number" v-model="formData.age"/>
+            <hr/>
+            <label>Job:</label>
+            <input type="text" v-model="formData.job"/>
+            <hr/>
+            <label>Height:</label>
+            <input type="number" v-model="formData.height"/>
+            <hr/>
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+
+
+        <button class="defaultButton"
+                v-bind:class="{isActive:calibrateButton.isActive}"
+                v-on:click="toggleCalibrationButton"
+        >
+            Calibrate
+        </button>
+
+        <!--    <p v-text="myText"></p>-->
+        <!--    <hr/>-->
+        <!--    <p v-html="myHtml"></p>-->
+
+        <!--    <p v-if="checkUser()" >-->
+        <!--        You are {{username}}-->
+        <!--    </p>-->
+        <!--    <p v-else>-->
+        <!--        you are {{username}}-->
+        <!--    </p>-->
+    </div>
+
+
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="app.js"></script>
+
+
+
+
+</body>
+</html>

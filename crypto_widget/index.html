@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CryptoWatch</title>
+</head>
+<body>
+<div id="app">
+
+<crypto-widget :asset_name="asset_name"
+               :price="price"
+               :price_24_stats="price_24_stats"
+               :bids="bids"
+               :asks="asks"
+               :price_color="price_color"
+></crypto-widget>
+
+
+</div>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="app.js"></script>
+
+
+<!--<script type="text/x-template" id="temp-crypto-widget">-->
+
+<!--         <div class="crypto-widget">-->
+<!--        <div class="s-label">-->
+<!--            {{asset_name}}-->
+<!--        </div>-->
+<!--          <div class="l-label">-->
+<!--            {{price}}-->
+<!--        </div>-->
+<!--          <div class="l-label">-->
+<!--           24hr: {{price_24_stats}}-->
+<!--        </div>-->
+
+<!--          <div class="m-label">-->
+<!--           Bids: {{bids}}-->
+<!--        </div>-->
+
+<!--          <div class="m-label">-->
+<!--           Asks: {{asks}}-->
+<!--        </div>-->
+
+<!--      </div>-->
+
+
+<!--    </script>-->
+
+</body>
+</html>
