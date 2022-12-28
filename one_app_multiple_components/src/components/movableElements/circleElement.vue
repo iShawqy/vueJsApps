@@ -96,7 +96,10 @@ name: "circleElement",
   }
   },
   mounted () {
-  this.setElementPos()
+  this.setElementPos();
+  setInterval(() => {
+                  this.emitElementDimensions();
+                }, 25);
   },
   methods: {
             setElementPos(){
@@ -147,7 +150,6 @@ name: "circleElement",
               }
               },
 
-
             setSize(){
               this.stopResizing();
               if (this.parentKeyEvent == "Enter"){
@@ -157,6 +159,7 @@ name: "circleElement",
                 console.log(this.originalWidth)
                 this.baseStyle.width = this.originalWidth;
                 this.baseStyle.height = this.originalWidth;
+
               }
               this.selectElement(true)
 
@@ -197,7 +200,6 @@ name: "circleElement",
               clearInterval(this.resizingIntervalId)
 
             },
-
             selectElement(select){
               if (select){
                 this.selectedStyle['border'] =  '5px solid black';
@@ -209,7 +211,18 @@ name: "circleElement",
             if (event.key == "Escape") {
 
             }
-            }
+            },
+            emitElementDimensions(){
+              var dimensions = {
+                type: this.type,
+                id: this.id,
+                width: this.baseStyle.width,
+                height: this.baseStyle.height,
+              };
+
+              this.$emit('elementDimensions', dimensions);
+
+            },
 
   },
   watch:{

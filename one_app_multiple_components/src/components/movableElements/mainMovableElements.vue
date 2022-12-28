@@ -18,6 +18,8 @@
                    :moving="element.moving"
                    :resizing="element.resizing"
                    :background-color="element.backgroundColor"
+                   :width="element.width"
+                   :heigh="element.height"
                    @mousedown="executeElementMouseDown(element, $event)"
                    @mouseup="executeElementMouseUp(element, $event)"
                    @click="executeElementClick(element, $event)"
@@ -26,6 +28,7 @@
                    :mouse-pos-x="mousePosX" :mouse-pos-y="mousePosY"
                    @dblclick="resize(element)" :parent-key-event="keyEvent"
                    @elementCenterXY="setElementCenterXY"
+                   @elementDimensions="setElementDimensions"
 
   >
 </circle-element>
@@ -93,6 +96,21 @@ name: "mainMovableElements",
       square: 'blue',
       rectangle: 'green'
     },
+
+    elementsDefaultDimensions: {
+      circle: {
+        width: '100px',
+        height: '100px'
+      },
+      square : {
+        width: '100px',
+        height: '100px'
+      },
+      rectangle: {
+        width: '300px',
+        height: '100px'
+      }
+    },
     selectedItems: {},
     multipleSelected: false,
     lassoSelecting: false,
@@ -100,6 +118,8 @@ name: "mainMovableElements",
     moving: false,
     lassoInProgress: false,
     afterLassoIntervalId: null,
+
+    elementsCopy: [],
 
   }
   },
@@ -187,6 +207,50 @@ name: "mainMovableElements",
       else if (event.key == 'A') {
         this.selectAllElements()
       }
+      else if (event.key == 'C') {
+        this.copyElements()
+      }
+      else if (event.key == 'V'){
+        this.pasteElements();
+
+      }
+
+    },
+    pasteElements(){
+      for (let i=0; i<this.elementsCopy.length; i++) {
+        var el = this.elementsCopy[i];
+        var elementId = this.elementsHighestId +1;
+        el['id'] = elementId;
+        this.elements[el.type][elementId] = el;
+        this.elementsHighestId += 1;
+        this.elementsCount += 1;
+
+      }
+
+    },
+
+    copyElements(){
+      this.elementsCopy = [];
+      if (Object.keys(this.selectedItems).length != 0) {
+        for (const [id, value] of Object.entries(this.selectedItems)) {
+        this.elementsCopy.push(this.copyElement(value))
+      }
+      }
+
+    },
+    copyElement(element) {
+        var elementData = {
+            type: element.type,
+            id: 0,
+            selected: false,
+            moving: false,
+            resizing: false,
+            backgroundColor: element.backgroundColor,
+            centerXY: {},
+            width: element.width,
+            height: element.height,
+      }
+      return elementData
 
     },
     deleteSelectedElements(){
@@ -194,8 +258,9 @@ name: "mainMovableElements",
           delete this.elements[value.type][id];
           if (this.selectedItems.hasOwnProperty(id)){
                     delete this.selectedItems[id]
+                    this.elementsCount -= 1;
                   }
-          this.elementsCount -= 1;
+
         }
     },
     selectAllElements(){
@@ -218,6 +283,8 @@ name: "mainMovableElements",
             resizing: false,
             backgroundColor: this.elementsDefaultBackgroundColors[type],
             centerXY: {},
+            width: this.elementsDefaultDimensions[type]['width'],
+            height: this.elementsDefaultDimensions[type]['height'],
       }
       this.elements[type][elementId] = elementData
       this.elementsHighestId += 1
@@ -263,7 +330,6 @@ name: "mainMovableElements",
       }
 
     },
-
     lassoSelectElements(lassoEdges){
       console.log(lassoEdges);
       if (lassoEdges.w >0 && lassoEdges.h >0) {
@@ -296,10 +362,13 @@ name: "mainMovableElements",
     setElementCenterXY(elData){
       this.elements[elData.type][elData.id]['centerXY'] = elData.centerXY;
     },
-
     resize(element){
       element.selected = false;
       element.resizing = true;
+    },
+    setElementDimensions(dimensions){
+      this.elements[dimensions.type][dimensions.id]['width'] = dimensions.width;
+      this.elements[dimensions.type][dimensions.id]['height'] = dimensions.height;
     },
 
   },
