@@ -35,6 +35,7 @@ props: ["message", "isChatter"],
   background-color: rgb(32,44,51);
   color: white;
   align-self: flex-end;
+  word-break: break-all;
 }
 
 .chatterStyle{
@@ -48,16 +49,17 @@ props: ["message", "isChatter"],
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  word-wrap: break-word;
+  /*word-wrap: break-word;*/
   font-size: 20px;
   font-family: Arial;
   margin: 5px;
   color: white;
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  overflow-wrap: break-word;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
+  /*white-space: pre-wrap;*/
+  /*white-space: -moz-pre-wrap;*/
+  /*overflow-wrap: break-word;*/
+  /*white-space: -o-pre-wrap;*/
+  /*word-wrap: break-word;*/
+  word-break: break-all;
 }
 
 .timestampStyle{

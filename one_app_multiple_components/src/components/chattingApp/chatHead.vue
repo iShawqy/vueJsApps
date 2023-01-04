@@ -1,5 +1,12 @@
 <template>
   <div class="chatHeadMainContainer">
+    <div class="percentageLabelStyle">{{nrMsgsBarValue}}%</div>
+
+    <progress class="progressBar" :value="nrMsgsBarValue"
+              :class="{dangerStyle:nrMsgsBarValue>=60, moderateStyle:nrMsgsBarValue<60 && nrMsgsBarValue>40}"
+
+              max="100"></progress>
+
     <img :src="profilePhoto">
     <div class="userNameStatusContainer">
   {{chattee}}
@@ -8,6 +15,10 @@
   </div>
 
 </div>
+    <progress class="progressBar" :value="lenMsgsBarValue"
+              :class="{dangerStyle:lenMsgsBarValue>=60, moderateStyle:lenMsgsBarValue<60 && lenMsgsBarValue>40}"
+              max="100"></progress>
+    <div class="percentageLabelStyle">{{lenMsgsBarValue}}%</div>
   </div>
 
 </template>
@@ -15,7 +26,7 @@
 <script>
 export default {
 name: "chatHead",
-props: ['chattee', 'status'],
+props: ['chattee', 'status', 'nrMsgsBarValue', 'lenMsgsBarValue'],
 mounted() {
   this.getChatteePhoto();
 },
@@ -58,6 +69,12 @@ methods :{
   font-family: Arial;
 }
 
+.percentageLabelStyle{
+  color: white;
+  font-size: 12px;
+  font-family: Arial;
+}
+
 .italicText{
   margin-top: 5px;
   font-style: italic;
@@ -69,4 +86,27 @@ img {
   width: 40px;
   margin-right: 10px;
 }
+
+.progressBar {
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.dangerStyle{
+  accent-color: #ff0000;
+}
+
+.moderateStyle{
+  accent-color: #0be23d;
+}
+/*.progressBar::-moz-progress-bar {*/
+/*    background: green;*/
+/*}*/
+
+/* For Chrome or Safari */
+/*.progressBar::-webkit-progress-value {*/
+/*    background: green;*/
+/*}*/
+
 </style>

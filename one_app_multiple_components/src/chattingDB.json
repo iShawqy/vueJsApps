@@ -27,326 +27,95 @@
   ],
   "messages": [
     {
-      "content": "Yo Ahs\n",
-      "timestamp": "4/1/2023 @ 17:3",
+      "content": "hi ash\n",
+      "timestamp": "5/1/2023 @ 0:14",
       "creator": "Ibra",
       "destination": "Ash",
       "id": 1
     },
     {
-      "content": "ash\n",
-      "timestamp": "4/1/2023 @ 17:3",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "hi Ibra\n",
+      "timestamp": "5/1/2023 @ 0:14",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 2
     },
     {
-      "content": "how you doin?\n",
-      "timestamp": "4/1/2023 @ 17:3",
+      "content": "how was your trip?\n",
+      "timestamp": "5/1/2023 @ 0:16",
       "creator": "Ibra",
       "destination": "Ash",
       "id": 3
     },
     {
-      "content": "yoo\n",
-      "timestamp": "4/1/2023 @ 17:3",
-      "creator": "Ash",
-      "destination": "Ibra",
+      "content": "was it good?\n",
+      "timestamp": "5/1/2023 @ 0:16",
+      "creator": "Ibra",
+      "destination": "Ash",
       "id": 4
     },
     {
-      "content": "i am doing good\n",
-      "timestamp": "4/1/2023 @ 17:3",
-      "creator": "Ash",
-      "destination": "Ibra",
+      "content": "i did not hear from you since few weeks\n",
+      "timestamp": "5/1/2023 @ 0:16",
+      "creator": "Ibra",
+      "destination": "Ash",
       "id": 5
     },
     {
-      "content": "how is life?\n",
-      "timestamp": "4/1/2023 @ 17:3",
+      "content": "it was good\n",
+      "timestamp": "5/1/2023 @ 0:17",
       "creator": "Ash",
       "destination": "Ibra",
       "id": 6
     },
     {
-      "content": "yoo\n",
-      "timestamp": "4/1/2023 @ 22:14",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "i had a lot of fun\n",
+      "timestamp": "5/1/2023 @ 0:17",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 7
     },
     {
-      "content": "how is life\n",
-      "timestamp": "4/1/2023 @ 22:14",
+      "content": "this is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long message\n",
+      "timestamp": "5/1/2023 @ 0:18",
       "creator": "Ibra",
       "destination": "Ash",
       "id": 8
     },
     {
-      "content": "jjdjhd\n",
-      "timestamp": "4/1/2023 @ 22:15",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "so?\n",
+      "timestamp": "5/1/2023 @ 0:19",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 9
     },
     {
-      "content": "djdnd\n",
-      "timestamp": "4/1/2023 @ 22:15",
+      "content": "only so? what do you mean so?\n",
+      "timestamp": "5/1/2023 @ 0:19",
       "creator": "Ibra",
       "destination": "Ash",
       "id": 10
     },
     {
-      "content": "djdndn\n",
-      "timestamp": "4/1/2023 @ 22:15",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "this is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long message\n",
+      "timestamp": "5/1/2023 @ 0:19",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 11
     },
     {
-      "content": "djdndn\n",
-      "timestamp": "4/1/2023 @ 22:15",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "this is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long message\n",
+      "timestamp": "5/1/2023 @ 0:20",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 12
     },
     {
-      "content": "jdjdjd\n",
-      "timestamp": "4/1/2023 @ 22:15",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 13
-    },
-    {
-      "content": "jdjdj\n",
-      "timestamp": "4/1/2023 @ 22:15",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 14
-    },
-    {
-      "content": "jdjdjd\n",
-      "timestamp": "4/1/2023 @ 22:15",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 15
-    },
-    {
-      "content": "jdjdjd\n",
-      "timestamp": "4/1/2023 @ 22:15",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 16
-    },
-    {
-      "content": "jdjdjd\n",
-      "timestamp": "4/1/2023 @ 22:15",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 17
-    },
-    {
-      "content": "jlansdlajksndölasd\na",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 18
-    },
-    {
-      "content": "sdnlasdnaslda\nsd",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 19
-    },
-    {
-      "content": "almsnda,lsd\n",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 20
-    },
-    {
-      "content": "kjandlajndlasjdnasd\n",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 21
-    },
-    {
-      "content": "jandslöjansd\n",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 22
-    },
-    {
-      "content": "lajsndlajsdnmalsdkjmnasd\n",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 23
-    },
-    {
-      "content": "jasndlasmd\n",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 24
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 25
-    },
-    {
-      "content": "asdasd\n",
-      "timestamp": "4/1/2023 @ 22:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 26
-    },
-    {
-      "content": "asdasdas\n",
-      "timestamp": "4/1/2023 @ 22:23",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 27
-    },
-    {
-      "content": "asdasd\n",
-      "timestamp": "4/1/2023 @ 22:23",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 28
-    },
-    {
-      "content": "asdasd\n",
-      "timestamp": "4/1/2023 @ 22:25",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 29
-    },
-    {
-      "content": "ssdf\n",
-      "timestamp": "4/1/2023 @ 22:25",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 30
-    },
-    {
-      "content": "kiuzthzh",
-      "timestamp": "4/1/2023 @ 22:25",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 31
-    },
-    {
-      "content": "sdasdasd\nsadasdasd\n",
-      "timestamp": "4/1/2023 @ 22:26",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 32
-    },
-    {
-      "content": "asdasd\nasdasd\nasdasdad\nasdasd\n\n",
-      "timestamp": "4/1/2023 @ 22:26",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 33
-    },
-    {
-      "content": "lkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhk\n",
-      "timestamp": "4/1/2023 @ 22:29",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 34
-    },
-    {
-      "content": "lkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhklkjhlkjhlkjhlkjhlkjhlkjhkljhk\n\n",
-      "timestamp": "4/1/2023 @ 22:30",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 35
-    },
-    {
-      "content": "asdasd\nAsdasd\n\n",
-      "timestamp": "4/1/2023 @ 22:30",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 36
-    },
-    {
-      "content": "dfadfasd\nAsdasda\nASdasdad\n",
-      "timestamp": "4/1/2023 @ 22:33",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 37
-    },
-    {
-      "content": "ydafasdasdasdasdasdasdasdasdasdasdadasdadasdasdasdadasdadasdasdasdadadasdadadsasdasdasdasdasdasdasdad\n",
-      "timestamp": "4/1/2023 @ 22:34",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 38
-    },
-    {
-      "content": "adasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasd\n",
-      "timestamp": "4/1/2023 @ 22:41",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 39
-    },
-    {
-      "content": "asdasd\nASdasda\nASDASD\nAsdasd\n\n",
-      "timestamp": "4/1/2023 @ 22:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 40
-    },
-    {
-      "content": "hbkhkb\n",
-      "timestamp": "4/1/2023 @ 22:46",
+      "content": "hey..\n",
+      "timestamp": "5/1/2023 @ 0:20",
       "creator": "Ash",
       "destination": "Ibra",
-      "id": 41
-    },
-    {
-      "content": "adsalnsödjansdölkamnsdölkasmdölaksdmlaöksdmalöskdmaöslkdmalöskdmalöskdmasöldkmasd\n",
-      "timestamp": "4/1/2023 @ 22:48",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 42
-    },
-    {
-      "content": "asdasd\nASDASD\nASDASD\n",
-      "timestamp": "4/1/2023 @ 22:48",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 43
-    },
-    {
-      "content": "asdasdmla-s.mda-sdkmasd\n",
-      "timestamp": "4/1/2023 @ 22:48",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 44
-    },
-    {
-      "content": "laksmdlakmsd\n",
-      "timestamp": "4/1/2023 @ 22:48",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 45
-    },
-    {
-      "content": "lkmasdkmasd\n",
-      "timestamp": "4/1/2023 @ 22:48",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 46
+      "id": 13
     }
   ]
 }

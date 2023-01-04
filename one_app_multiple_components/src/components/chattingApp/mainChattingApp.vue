@@ -25,7 +25,11 @@
   </div>
 
   <div class="chatViewContainer" v-if="ready">
-    <chat-head :chattee="chatteeName" :status="chattee.status" v-if="ready">
+    <chat-head :chattee="chatteeName"
+               :status="chattee.status"
+               v-if="ready"
+               :nrMsgsBarValue="nrMsgsBarValue"
+               :lenMsgsBarValue="lenMsgsBarValue">
     </chat-head>
     <chat-area :messages="messages"
                :chatterName="chatterName"
@@ -71,6 +75,7 @@ mounted () {
   // this.fetchMessages();
   setInterval(this.fetchLatestMessages, 250);
   setInterval(this.updateChatteeStatus, 500);
+  setInterval(this.compileStats, 1000)
 
 
 },
@@ -91,6 +96,20 @@ data(){
     newMessages: false,
     chatStarted: false,
     response: '',
+    nrMsgs: {
+      total: 0,
+      chatter:0,
+      chattee:0
+    },
+    lenMsgs: {
+      total: 0,
+      chatter:0,
+      chattee:0
+    },
+
+    nrMsgsBarValue:0,
+    lenMsgsBarValue:0,
+
 
   }
 },
@@ -258,7 +277,40 @@ methods: {
     })
     }
 
-  }
+  },
+  compileStats(){
+    this.nrMsgs= {
+      total: 0,
+      chatter:0,
+      chattee:0
+    };
+    this.lenMsgs = {
+      total: 0,
+      chatter:0,
+      chattee:0
+    };
+    for (let i=0;i<this.messages.length; i++){
+        if (this.messages[i].creator == this.chatterName){
+          this.nrMsgs.chatter += 1;
+          this.lenMsgs.chatter += this.messages[i].content.length;
+        } else if (this.messages[i].creator == this.chatteeName){
+          this.nrMsgs.chattee += 1
+          this.lenMsgs.chattee += this.messages[i].content.length;
+        }
+    }
+    this.nrMsgs.total = this.nrMsgs.chatter + this.nrMsgs.chattee;
+    this.lenMsgs.total = this.lenMsgs.chatter + this.lenMsgs.chattee;
+
+    if (this.nrMsgs.total>0){
+      this.nrMsgsBarValue = Math.floor( (this.nrMsgs.chatter/this.nrMsgs.total) * 100);
+    }
+
+    if (this.lenMsgs.total>0){
+      this.lenMsgsBarValue = Math.floor( (this.lenMsgs.chatter/this.lenMsgs.total) * 100);
+    }
+
+
+  },
 }
 }
 </script>

@@ -153,8 +153,8 @@ clearInterval(this.statusInterval)
       })
       .catch(error => {
         this.response = error;
-        this.$toast.error('Error while updating status', {
-        position: "bottom"});
+        // this.$toast.error('Error while updating status', {
+        // position: "bottom"});
       })
 
 
