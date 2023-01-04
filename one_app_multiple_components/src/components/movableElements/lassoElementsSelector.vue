@@ -143,6 +143,7 @@ name: "lassoElementsSelector",
               this.selectionEdges.w = parseInt(this.baseStyle.width.split("px")[0]);
               this.selectionEdges.y = parseInt(this.baseStyle.top.split("px")[0]);
               this.selectionEdges.h = parseInt(this.baseStyle.height.split("px")[0]);
+
               this.$emit('lassoSelectorDone', this.selectionEdges);
               this.resetSelect();
             },

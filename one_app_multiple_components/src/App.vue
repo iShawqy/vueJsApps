@@ -1,10 +1,16 @@
 <template>
 
   <div class="mainContainer" >
+<!--    <main-editable-questionaire>-->
 
-  <main-movable-elements>
+<!--    </main-editable-questionaire>-->
+    <main-chatting-app>
 
-  </main-movable-elements>
+    </main-chatting-app>
+
+<!--  <main-movable-elements>-->
+
+<!--  </main-movable-elements>-->
 <!--    <questions-answers-contianer>-->
 <!--    </questions-answers-contianer>-->
 <!--    <calculatorMain>-->
@@ -19,8 +25,12 @@
 <script>
 // import SignupForm from "@/components/forms/SignupForm";
 // import calculatorMain from "@/components/calculatorContainers/calculatorMain";
-import questionsAnswersContianer from "@/components/questionaire/questionsAnswersContianer";
-import mainMovableElements from "@/components/movableElements/mainMovableElements";
+// import questionsAnswersContianer from "@/components/questionaire/questionsAnswersContianer";
+// import mainMovableElements from "@/components/movableElements/mainMovableElements";
+import axios from 'axios';
+// import mainEditableQuestionaire from "@/components/editableQuestionaire/mainEditableQuestionaire";
+
+import mainChattingApp from "@/components/chattingApp/mainChattingApp";
 
 
 
@@ -28,10 +38,9 @@ import mainMovableElements from "@/components/movableElements/mainMovableElement
 export default {
 
   name: 'App',
-  components: {
-    mainMovableElements, questionsAnswersContianer}
-    // , calculatorMain, SignupForm,
-    //           questionsAnswersContianer},
+  components: {mainChattingApp},
+
+
 
 
   }

@@ -79,7 +79,7 @@ name: "circleElement",
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-
+      opacity: '0.5',
       // margin: '4px 2px',
       // borderRadius: '100%',
 

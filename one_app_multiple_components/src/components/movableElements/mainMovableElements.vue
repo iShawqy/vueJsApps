@@ -4,6 +4,7 @@
      @keyup="handleKeyPress($event)" tabindex="0"
      @mousedown="executeParentMouseDown($event)"
      @mouseup="executeParentMouseUp($event)"
+     @keydown="handleKeyDown($event)"
 >
 <!--&gt;-->
   <elements-browser class="elementsBrowser animate__animated animate__fadeInLeft"
@@ -118,7 +119,7 @@ name: "mainMovableElements",
     moving: false,
     lassoInProgress: false,
     afterLassoIntervalId: null,
-
+    shiftKeyPressed: false,
     elementsCopy: [],
 
   }
@@ -214,8 +215,17 @@ name: "mainMovableElements",
         this.pasteElements();
 
       }
+      else if (event.key == 'Shift') {
+        this.shiftKeyPressed = false;
+      }
 
     },
+    handleKeyDown(event){
+      if (event.key=="Shift"){
+        this.shiftKeyPressed = true;
+      }
+    },
+
     pasteElements(){
       for (let i=0; i<this.elementsCopy.length; i++) {
         var el = this.elementsCopy[i];
@@ -336,15 +346,21 @@ name: "mainMovableElements",
         for (const [type, els] of Object.entries(this.elements)) {
           for (const [id, elData] of Object.entries(this.elements[type])) {
             var elCenterXY = this.elements[type][id]['centerXY'];
-
-            if (elCenterXY.x >= lassoEdges.x && elCenterXY.x <= (lassoEdges.x + lassoEdges.w)) {
-              if (elCenterXY.y >= lassoEdges.y && elCenterXY.y <= (lassoEdges.y + lassoEdges.h)) {
+            if (elCenterXY.x >= lassoEdges.x && elCenterXY.x <= (lassoEdges.x + lassoEdges.w)
+            && elCenterXY.y >= lassoEdges.y && elCenterXY.y <= (lassoEdges.y + lassoEdges.h)) {
                 if (!this.elements[type][id]['selected']) {
-                  this.elements[type][id]['selected'] = true;
-                  this.selectedItems[id] = elData;
+                  this.selectElement(elData)
+                  // this.elements[type][id]['selected'] = true;
+                  // this.selectedItems[id] = elData;
                 }
 
-              }
+            } else {
+                  if (this.elements[type][id]['selected']) {
+                    if (!this.shiftKeyPressed) {
+                      this.deSelectElement(elData);
+                    }
+
+                }
             }
           }
         }

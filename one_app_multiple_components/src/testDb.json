@@ -1,0 +1,55 @@
+{
+  "questionairs": [
+    {
+      "id": 1,
+      "title": "Questionaire 1",
+      "length": 5,
+      "creator": "Ibra",
+      "createdOn": "timestamp",
+      "description": "nothing",
+      "questions" : [
+        {
+          "id": 1,
+          "question": "whats your name?",
+          "choices" : ["choice 1", "choice 2", "choice 3", "choice 4"],
+          "correctAnswer": "choice 2"
+
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Questionaire 2",
+      "length": 5,
+      "creator": "Ibra",
+      "createdOn": "timestamp",
+      "description": "nothing",
+      "questions" : [
+        {
+          "id": 1,
+          "question": "whats your name?",
+          "choices" : ["choice 1", "choice 2", "choice 3", "choice 4"],
+          "correctAnswer": "choice 2"
+
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Questionaire 3",
+      "length": 5,
+      "creator": "Ibra",
+      "createdOn": "timestamp",
+      "description": "nothing",
+      "questions" : [
+        {
+          "id": 1,
+          "question": "whats your name?",
+          "choices" : ["choice 1", "choice 2", "choice 3", "choice 4"],
+          "correctAnswer": "choice 2"
+
+        }
+      ]
+    }
+  ]
+}

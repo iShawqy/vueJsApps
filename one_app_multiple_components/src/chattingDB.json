@@ -1,0 +1,373 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ibra",
+      "password": "ibrakadabra",
+      "status": "Online"
+    },
+    {
+      "id": 2,
+      "name": "Ash",
+      "password": "ashghost",
+      "status": "Online"
+    },
+    {
+      "id": 3,
+      "name": "Ghost",
+      "password": "ashghost",
+      "status": "Online"
+    },
+    {
+      "id": 4,
+      "name": "Batman",
+      "password": "ashghost",
+      "status": "Online"
+    }
+  ],
+  "messages": [
+    {
+      "content": "hi\n",
+      "timestamp": "4/1/2023 @ 12:31",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 1
+    },
+    {
+      "content": "how is life?\n",
+      "timestamp": "4/1/2023 @ 12:31",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 2
+    },
+    {
+      "content": "whatsup?\n",
+      "timestamp": "4/1/2023 @ 12:37",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 3
+    },
+    {
+      "content": "notjing much\n",
+      "timestamp": "4/1/2023 @ 12:38",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 4
+    },
+    {
+      "content": "u?\n",
+      "timestamp": "4/1/2023 @ 12:38",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 5
+    },
+    {
+      "content": "yooo\n",
+      "timestamp": "4/1/2023 @ 12:38",
+      "creator": "Ghost",
+      "destination": "Batman",
+      "id": 6
+    },
+    {
+      "content": "what happenend?\n",
+      "timestamp": "4/1/2023 @ 12:38",
+      "creator": "Batman",
+      "destination": "Ghost",
+      "id": 7
+    },
+    {
+      "content": "whats up yooo?\n",
+      "timestamp": "4/1/2023 @ 13:1",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 8
+    },
+    {
+      "content": "jsadasdhasd   \n",
+      "timestamp": "4/1/2023 @ 13:4",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 9
+    },
+    {
+      "content": "jujsjsks\n",
+      "timestamp": "4/1/2023 @ 13:5",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 10
+    },
+    {
+      "content": "hjskklajsd asd\n",
+      "timestamp": "4/1/2023 @ 13:5",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 11
+    },
+    {
+      "content": "kjansdöasd\n",
+      "timestamp": "4/1/2023 @ 13:5",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 12
+    },
+    {
+      "content": "akjsndasd\n",
+      "timestamp": "4/1/2023 @ 13:5",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 13
+    },
+    {
+      "content": "whats up?\n",
+      "timestamp": "4/1/2023 @ 13:9",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 14
+    },
+    {
+      "content": "nothing much\n",
+      "timestamp": "4/1/2023 @ 13:9",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 15
+    },
+    {
+      "content": "how about you?\n",
+      "timestamp": "4/1/2023 @ 13:9",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 16
+    },
+    {
+      "content": "yoooo\n",
+      "timestamp": "4/1/2023 @ 13:25",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 17
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:36",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 18
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:36",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 19
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:36",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 20
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:36",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 21
+    },
+    {
+      "content": "sdasdasd\n",
+      "timestamp": "4/1/2023 @ 13:37",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 22
+    },
+    {
+      "content": "sadasd\n",
+      "timestamp": "4/1/2023 @ 13:37",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 23
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:37",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 24
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:38",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 25
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:38",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 26
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:38",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 27
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:38",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 28
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:38",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 29
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:40",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 30
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:40",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 31
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:40",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 32
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:40",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 33
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:40",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 34
+    },
+    {
+      "content": "\n",
+      "timestamp": "4/1/2023 @ 13:41",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 35
+    },
+    {
+      "content": "\n\n",
+      "timestamp": "4/1/2023 @ 13:42",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 36
+    },
+    {
+      "content": "asdasd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 37
+    },
+    {
+      "content": "asd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 38
+    },
+    {
+      "content": "asdasdd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 39
+    },
+    {
+      "content": "asdasd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 40
+    },
+    {
+      "content": "asdasd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 41
+    },
+    {
+      "content": "asdasd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 42
+    },
+    {
+      "content": "asd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 43
+    },
+    {
+      "content": "asdasd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 44
+    },
+    {
+      "content": "asdasdasd\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 45
+    },
+    {
+      "content": "yooo batman\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ghost",
+      "destination": "Batman",
+      "id": 46
+    },
+    {
+      "content": "whatsup\n",
+      "timestamp": "4/1/2023 @ 13:43",
+      "creator": "Ghost",
+      "destination": "Batman",
+      "id": 47
+    },
+    {
+      "content": "i am ghost\n",
+      "timestamp": "4/1/2023 @ 13:44",
+      "creator": "Ghost",
+      "destination": "Batman",
+      "id": 48
+    },
+    {
+      "content": "i am batman\n",
+      "timestamp": "4/1/2023 @ 13:44",
+      "creator": "Batman",
+      "destination": "Ghost",
+      "id": 49
+    }
+  ]
+}
