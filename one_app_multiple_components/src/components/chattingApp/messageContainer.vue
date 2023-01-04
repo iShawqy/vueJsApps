@@ -1,5 +1,5 @@
 <template>
-<div class="messageContainerStyle" :class="{chatterStyle:isChatter}" >
+<div class="messageContainerStyle" :class="{chatterStyle:isChatter}">
   <div class="messageContentStyle">
     {{message.content}}
   </div>
@@ -28,7 +28,7 @@ props: ["message", "isChatter"],
   display: flex;
   flex-direction: column;
   width: fit-content;
-  max-width: 60%;
+  max-width: 40%;
   height: fit-content;
   margin: 5px;
   border-radius: 5px;
@@ -48,12 +48,16 @@ props: ["message", "isChatter"],
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  word-wrap: break-word;
   font-size: 20px;
   font-family: Arial;
   margin: 5px;
   color: white;
-
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  overflow-wrap: break-word;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
 .timestampStyle{

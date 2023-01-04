@@ -5,9 +5,9 @@
   <div class="labelSelectContainer">
       <label class="label" for="comboBox">Who are you?</label>
   <select  class="selectStyle" id="comboBox" v-model="chatterName"
-           @change="selectChatter($event)">
+           @change="selectChatter()">
   <option disabled value="">Please select who you are</option>
-  <option  v-for="user in users">{{user.name}}</option>
+  <option  v-for="user in users" :key="user.id">{{user.name}}</option>
 </select>
 
     </div>
@@ -15,9 +15,9 @@
   <div class="labelSelectContainer">
       <label class="label" for="comboBox1">Chat with:</label>
   <select  class="selectStyle" id="comboBox1" v-model="chatteeName"
-  @change="selectChattee($event)">
+  @change="selectChattee()">
   <option disabled value="">Please select who you want to chat with</option>
-  <option  v-for="chatteeUser in chattees">{{chatteeUser.name}}</option>
+  <option  v-for="chatteeUser in chattees" :key="chatteeUser.id">{{chatteeUser.name}}</option>
 </select>
 
     </div>
@@ -49,6 +49,7 @@
       Log-out
     </button>
 
+
 </div>
 
 
@@ -60,6 +61,7 @@ import chatHead from "@/components/chattingApp/chatHead";
 import chatArea from "@/components/chattingApp/chatArea";
 import messageInputArea from "@/components/chattingApp/messageInputArea";
 
+
 export default {
 name: "mainChattingApp",
 components: {chatHead, chatArea, messageInputArea},
@@ -67,7 +69,7 @@ mounted () {
   this.fetchUsers();
   this.createChatters();
   // this.fetchMessages();
-  setInterval(this.fetchLatestMessages, 100);
+  setInterval(this.fetchLatestMessages, 250);
   setInterval(this.updateChatteeStatus, 500);
 
 
@@ -88,6 +90,8 @@ data(){
     lastMessageId: 0,
     newMessages: false,
     chatStarted: false,
+    response: '',
+
   }
 },
 methods: {
@@ -155,7 +159,7 @@ methods: {
       this.chatters.push(this.users[i]);
     }
   },
-  selectChattee(event){
+  selectChattee(){
     for (let i=0; i<this.users.length; i++) {
       if (this.users[i].name == this.chatteeName) {
         this.chattee = this.users[i];
@@ -165,7 +169,7 @@ methods: {
     this.startChat();
 
   },
-  selectChatter(event){
+  selectChatter(){
     for (let i=0; i<this.users.length; i++) {
       if (this.users[i].name == this.chatterName) {
         this.chatter = this.users[i];
@@ -190,13 +194,13 @@ methods: {
         data: this.chatter
       })
       .then(response => {
-
+        this.response = response;
         this.$toast.success('You are online',  {
         position: "bottom"})
       })
 
       .catch(error => {
-
+        this.response = error;
         this.$toast.error('Error while logging you in', {
         position: "bottom"});
       })
@@ -211,12 +215,12 @@ methods: {
         data: this.chatter
       })
       .then(response => {
-
+        this.response = response;
         this.$toast.success('You are Offline',  {
         position: "bottom"})
       })
       .catch(error => {
-
+        this.response = error;
         this.$toast.error('Error while logging you in', {
         position: "bottom"});
       })
@@ -240,7 +244,7 @@ methods: {
     this.createChatters();
   },
   sendMessage(){
-    this.$refs.msgInputArea.sendMessage();
+    this.$refs.msgInputArea.sendMessage(false);
   },
   updateChatteeStatus(){
     if (this.chatStarted){
@@ -266,7 +270,7 @@ methods: {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #243847;
+  background-color: #152129;
 }
 .homeViewContainer{
   display: flex;

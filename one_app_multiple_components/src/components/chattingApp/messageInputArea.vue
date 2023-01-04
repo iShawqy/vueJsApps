@@ -2,7 +2,7 @@
 <!--<div >-->
   <textarea class="messageInputMainContainer"
             v-model="message" placeholder="Type a message"
-            @keyup.enter="sendMessage" @focus="onFocus" @blur="outFocus"
+            @keyup.enter="sendMessage($event)" @focus="onFocus" @blur="outFocus"
   ></textarea>
 <!--</div>-->
 </template>
@@ -14,7 +14,10 @@ export default {
 name: "messageInputArea",
 props: ["chatter", "chattee"],
 mounted() {
-  setInterval(this.updateStatus, 250)
+  this.statusInterval = setInterval(this.updateStatus, 500)
+},
+unmounted() {
+clearInterval(this.statusInterval)
 },
   data(){
   return {
@@ -23,42 +26,61 @@ mounted() {
     messagesUrl: "http://localhost:3004/messages",
     focused: false,
     lastState: false,
+    statusInterval:null,
+    response:'',
+    chatterCopy: {},
 
   }
 
 },
   methods:{
-  sendMessage(){
-    console.log(this.message)
-    if (this.message != "" && this.message != "\n") {
-      var currentdate = new Date();
-      var datetime = currentdate.getDate() + "/"
-                  + (currentdate.getMonth()+1)  + "/"
-                  + currentdate.getFullYear() + " @ "
-                  + currentdate.getHours() + ":"
-                  + currentdate.getMinutes()
+  sendMessage(event){
+    var currentdate = new Date();
+    var datetime = currentdate.getDate() + "/"
+              + (currentdate.getMonth()+1)  + "/"
+              + currentdate.getFullYear() + " @ "
+              + currentdate.getHours() + ":"
+              + currentdate.getMinutes()
 
 
 
-      var data = {
-        content: this.message,
-        timestamp: datetime,
-        creator: this.chatter.name,
-        destination: this.chattee.name,
+    var data = {
+    content: this.message,
+    timestamp: datetime,
+    creator: this.chatter.name,
+    destination: this.chattee.name,
       }
+    if (!event) {
+    if (this.message != "" && this.message != "\n") {
+      // var currentdate = new Date();
+      // var datetime = currentdate.getDate() + "/"
+      //             + (currentdate.getMonth()+1)  + "/"
+      //             + currentdate.getFullYear() + " @ "
+      //             + currentdate.getHours() + ":"
+      //             + currentdate.getMinutes()
+      //
+      //
+      //
+      // var data = {
+      //   content: this.message,
+      //   timestamp: datetime,
+      //   creator: this.chatter.name,
+      //   destination: this.chattee.name,
+      // }
       axios({
           method: 'post',
           url:this.messagesUrl,
           data: data
         })
         .then(response => {
+          this.response = response;
           this.message = "";
           this.$toast.success('sent',  {
           position: "bottom",
           duration: 250})
         })
         .catch(error => {
-
+          this.response = error;
           this.$toast.error('Error while logging you in', {
           position: "bottom"});
         })
@@ -66,6 +88,43 @@ mounted() {
     else {
       this.message = "";
     }
+    } else {
+      if (!event.shiftKey) {
+      //   var currentdate = new Date();
+      //   var datetime = currentdate.getDate() + "/"
+      //             + (currentdate.getMonth()+1)  + "/"
+      //             + currentdate.getFullYear() + " @ "
+      //             + currentdate.getHours() + ":"
+      //             + currentdate.getMinutes()
+      //
+      //
+      //
+      // var data = {
+      //   content: this.message,
+      //   timestamp: datetime,
+      //   creator: this.chatter.name,
+      //   destination: this.chattee.name,
+      // }
+      axios({
+          method: 'post',
+          url:this.messagesUrl,
+          data: data
+        })
+        .then(response => {
+          this.response = response;
+          this.message = "";
+          this.$toast.success('sent',  {
+          position: "bottom",
+          duration: 250})
+        })
+        .catch(error => {
+          this.response = error;
+          this.$toast.error('Error while logging you in', {
+          position: "bottom"});
+        })
+      }
+    }
+
 
   },
   onFocus(){
@@ -77,17 +136,23 @@ mounted() {
   updateStatus(){
 
       if (this.focused && this.message != '') {
-        this.chatter.status = 'typing...'
+        this.chatterCopy = this.chatter;
+        this.chatterCopy.status = 'typing...';
+
       } else {
-        this.chatter.status = 'Online'
+        this.chatterCopy = this.chatter;
+        this.chatterCopy.status = 'Online';
       }
       axios({
         method: 'put',
         url:this.usersUrl + '/' + this.chatter.id,
-        data: this.chatter
+        data: this.chatterCopy
       })
-      .then(response => {})
+      .then(response => {
+        this.response = response;
+      })
       .catch(error => {
+        this.response = error;
         this.$toast.error('Error while updating status', {
         position: "bottom"});
       })
@@ -111,14 +176,19 @@ mounted() {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  background-color: #00301a;
-
+  background-color: #17211b;
   border-radius: 5px;
+  border-color: #17211b;
   color: white;
   overflow-y: scroll;
   font-size: 20px;
   font-family: Arial;
   margin: 5px;
+  resize: none;
 
+}
+
+.messageInputMainContainer:focus {
+    outline-width: 0;
 }
 </style>

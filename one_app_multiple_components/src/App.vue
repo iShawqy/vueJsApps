@@ -27,7 +27,7 @@
 // import calculatorMain from "@/components/calculatorContainers/calculatorMain";
 // import questionsAnswersContianer from "@/components/questionaire/questionsAnswersContianer";
 // import mainMovableElements from "@/components/movableElements/mainMovableElements";
-import axios from 'axios';
+// import axios from 'axios';
 // import mainEditableQuestionaire from "@/components/editableQuestionaire/mainEditableQuestionaire";
 
 import mainChattingApp from "@/components/chattingApp/mainChattingApp";
