@@ -27,95 +27,53 @@
   ],
   "messages": [
     {
-      "content": "hi ash\n",
-      "timestamp": "5/1/2023 @ 0:14",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "hi\n+",
+      "timestamp": "5/1/2023 @ 19:54",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 1
     },
     {
-      "content": "hi Ibra\n",
-      "timestamp": "5/1/2023 @ 0:14",
+      "content": "hasda\n",
+      "timestamp": "5/1/2023 @ 19:54",
       "creator": "Ash",
       "destination": "Ibra",
       "id": 2
     },
     {
-      "content": "how was your trip?\n",
-      "timestamp": "5/1/2023 @ 0:16",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "adasd\n",
+      "timestamp": "5/1/2023 @ 19:54",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 3
     },
     {
-      "content": "was it good?\n",
-      "timestamp": "5/1/2023 @ 0:16",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "asd\n",
+      "timestamp": "5/1/2023 @ 19:54",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 4
     },
     {
-      "content": "i did not hear from you since few weeks\n",
-      "timestamp": "5/1/2023 @ 0:16",
+      "content": "hi\n",
+      "timestamp": "5/1/2023 @ 19:54",
       "creator": "Ibra",
       "destination": "Ash",
       "id": 5
     },
     {
-      "content": "it was good\n",
-      "timestamp": "5/1/2023 @ 0:17",
-      "creator": "Ash",
-      "destination": "Ibra",
+      "content": "ahasdjknasldökmasdlöksamahasdjknasldökmasdlöksamahasdjknasldökmasdlöksamahasdjknasldökmasdlöksamahasdjknasldökmasdlöksam\n",
+      "timestamp": "5/1/2023 @ 19:54",
+      "creator": "Ibra",
+      "destination": "Ash",
       "id": 6
     },
     {
-      "content": "i had a lot of fun\n",
-      "timestamp": "5/1/2023 @ 0:17",
-      "creator": "Ash",
-      "destination": "Ibra",
+      "content": "ahasdjknasldökmasdlöksamahasdjknasldökmasdlöksamahasdjknasldökmasdlöksam\n",
+      "timestamp": "5/1/2023 @ 19:55",
+      "creator": "Ibra",
+      "destination": "Ash",
       "id": 7
-    },
-    {
-      "content": "this is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long message\n",
-      "timestamp": "5/1/2023 @ 0:18",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 8
-    },
-    {
-      "content": "so?\n",
-      "timestamp": "5/1/2023 @ 0:19",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 9
-    },
-    {
-      "content": "only so? what do you mean so?\n",
-      "timestamp": "5/1/2023 @ 0:19",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 10
-    },
-    {
-      "content": "this is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long message\n",
-      "timestamp": "5/1/2023 @ 0:19",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 11
-    },
-    {
-      "content": "this is a very long messagethis is a very long messagethis is a very long messagethis is a very long messagethis is a very long message\n",
-      "timestamp": "5/1/2023 @ 0:20",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 12
-    },
-    {
-      "content": "hey..\n",
-      "timestamp": "5/1/2023 @ 0:20",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 13
     }
   ]
 }
