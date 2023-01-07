@@ -1,11 +1,13 @@
 <template>
   <div class="chatHeadMainContainer">
-    <div class="percentageLabelStyle">{{nrMsgsBarValue}}%</div>
+<!--    <div class="percentageLabelStyle">{{nrMsgsBarValue}}%</div>-->
+    <cutom-progress-bar :value="nrMsgsBarValue">
 
-    <progress class="progressBar" :value="nrMsgsBarValue"
-              :class="{dangerStyle:nrMsgsBarValue>=60, moderateStyle:nrMsgsBarValue<60 && nrMsgsBarValue>40}"
+    </cutom-progress-bar>
+<!--    <progress class="progressBar" :value="nrMsgsBarValue"-->
+<!--              :class="{dangerStyle:nrMsgsBarValue>=60, moderateStyle:nrMsgsBarValue<60 && nrMsgsBarValue>40}"-->
 
-              max="100"></progress>
+<!--              max="100"></progress>-->
 
     <img :src="profilePhoto">
     <div class="userNameStatusContainer">
@@ -15,18 +17,23 @@
   </div>
 
 </div>
-    <progress class="progressBar" :value="lenMsgsBarValue"
-              :class="{dangerStyle:lenMsgsBarValue>=60, moderateStyle:lenMsgsBarValue<60 && lenMsgsBarValue>40}"
-              max="100"></progress>
-    <div class="percentageLabelStyle">{{lenMsgsBarValue}}%</div>
+    <cutom-progress-bar :value="lenMsgsBarValue">
+
+    </cutom-progress-bar>
+<!--    <progress class="progressBar" :value="lenMsgsBarValue"-->
+<!--              :class="{dangerStyle:lenMsgsBarValue>=60, moderateStyle:lenMsgsBarValue<60 && lenMsgsBarValue>40}"-->
+<!--              max="100"></progress>-->
+<!--    <div class="percentageLabelStyle">{{lenMsgsBarValue}}%</div>-->
   </div>
 
 </template>
 
 <script>
+import cutomProgressBar from "@/components/commonComponents/cutomProgressBar";
 export default {
 name: "chatHead",
 props: ['chattee', 'status', 'nrMsgsBarValue', 'lenMsgsBarValue'],
+components: {cutomProgressBar},
 mounted() {
   this.getChatteePhoto();
 },
