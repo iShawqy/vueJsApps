@@ -3,462 +3,221 @@
     {
       "id": 1,
       "name": "Ibra",
-      "password": "ibrakadabra",
+      "email": "ib.sh92@gmail.com",
+      "password": "ibra",
       "status": "Online"
     },
     {
       "id": 2,
       "name": "Ash",
-      "password": "ashghost",
+      "email": "ash.gh92@gmail.com",
+      "password": "ash",
       "status": "Online"
     },
     {
       "id": 3,
       "name": "Ghost",
+      "email": "ghost.gh92@gmail.com",
       "password": "ashghost",
-      "status": "Offline"
+      "status": "Online"
     },
     {
       "id": 4,
       "name": "Batman",
+      "email": "batman.gh92@gmail.com",
       "password": "ashghost",
       "status": "Online"
+    },
+    {
+      "name": "newUser",
+      "email": "newUser@gmail.com",
+      "password": "hasdhasdh",
+      "status": "offline",
+      "id": 5
+    },
+    {
+      "name": "newUser1",
+      "email": "newUser@gmail.com1",
+      "password": "asd",
+      "status": "offline",
+      "id": 6
+    },
+    {
+      "name": "Ibra1",
+      "email": "ibra1@gmail.com",
+      "password": "asdasdasd",
+      "status": "offline",
+      "id": 7
+    },
+    {
+      "name": "asd",
+      "email": "sada",
+      "password": "asdasd",
+      "status": "offline",
+      "id": 8
+    },
+    {
+      "name": "asdk",
+      "email": "k",
+      "password": "kk",
+      "status": "offline",
+      "id": 9
+    },
+    {
+      "name": "asdasdasdasdasd",
+      "email": "asdasdasdasdasd",
+      "password": "asdasd",
+      "status": "offline",
+      "id": 10
+    },
+    {
+      "name": "daf",
+      "email": "asd",
+      "password": "asd",
+      "status": "offline",
+      "id": 11
+    },
+    {
+      "name": "asdasdasdasd",
+      "email": "asdasdasdasdaaaasd",
+      "password": "asd",
+      "status": "offline",
+      "id": 12
+    },
+    {
+      "name": "asdadaaadasdas",
+      "email": "aaasdasdaaa",
+      "password": "asdasa",
+      "status": "offline",
+      "id": 13
+    },
+    {
+      "name": "asdakisksj",
+      "email": "jaskksos,sk",
+      "password": "jsjksksk",
+      "status": "offline",
+      "id": 14
+    },
+    {
+      "name": "dasdaaaaasdasdasd",
+      "email": "asdaaaasdasasadaaa",
+      "password": "asd",
+      "status": "offline",
+      "id": 15
+    },
+    {
+      "name": "dakakakak",
+      "email": "kkksksksk",
+      "password": "kksksk",
+      "status": "offline",
+      "id": 16
+    },
+    {
+      "name": "benunik",
+      "email": "nbznjö@kdiod",
+      "password": "kdafa",
+      "status": "offline",
+      "id": 17
+    },
+    {
+      "name": "asdlmasdlas",
+      "email": "ölkm,aösld,",
+      "password": "öl,aölsd,aösd",
+      "status": "offline",
+      "id": 18
+    },
+    {
+      "name": "jshjshzkjfku",
+      "email": "jjdhdzhrmfk",
+      "password": "asad",
+      "status": "offline",
+      "id": 19
+    },
+    {
+      "name": "Jenny",
+      "email": "jenny@gmail.com",
+      "password": "jenny",
+      "status": "Offline",
+      "id": 20
     }
   ],
   "messages": [
     {
-      "content": "hshhs\n",
-      "timestamp": "7/1/2023 @ 12:19",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "yoo\n",
+      "timestamp": "8/1/2023 @ 13:34",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 1
     },
     {
-      "content": "jsjs\n",
-      "timestamp": "7/1/2023 @ 12:19",
+      "content": "k\n",
+      "timestamp": "8/1/2023 @ 13:35",
       "creator": "Ash",
       "destination": "Ibra",
       "id": 2
     },
     {
-      "content": "jsjs\n",
-      "timestamp": "7/1/2023 @ 12:19",
-      "creator": "Ash",
-      "destination": "Ibra",
+      "content": "ko\n",
+      "timestamp": "8/1/2023 @ 13:36",
+      "creator": "Ibra",
+      "destination": "Ash",
       "id": 3
     },
     {
-      "content": "jasjd\n",
-      "timestamp": "7/1/2023 @ 12:19",
-      "creator": "Ash",
-      "destination": "Ibra",
+      "content": "sladmasd\n",
+      "timestamp": "8/1/2023 @ 13:40",
+      "creator": "Ibra",
+      "destination": "Ash",
       "id": 4
     },
     {
-      "content": "klasmd\n",
-      "timestamp": "7/1/2023 @ 12:19",
+      "content": "adads\n",
+      "timestamp": "8/1/2023 @ 13:40",
       "creator": "Ibra",
       "destination": "Ash",
       "id": 5
     },
     {
-      "content": "kmasd\n",
-      "timestamp": "7/1/2023 @ 12:20",
+      "content": "asdads\n",
+      "timestamp": "8/1/2023 @ 13:40",
       "creator": "Ibra",
       "destination": "Ash",
       "id": 6
     },
     {
-      "content": "lkamsd\n",
-      "timestamp": "7/1/2023 @ 12:20",
+      "content": "asdad\n",
+      "timestamp": "8/1/2023 @ 13:40",
       "creator": "Ibra",
       "destination": "Ash",
       "id": 7
     },
     {
-      "content": "lamsd\n",
-      "timestamp": "7/1/2023 @ 12:20",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "adasd\n",
+      "timestamp": "8/1/2023 @ 13:40",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 8
     },
     {
-      "content": "lkasd\n",
-      "timestamp": "7/1/2023 @ 12:20",
-      "creator": "Ibra",
-      "destination": "Ash",
+      "content": "dasds\n",
+      "timestamp": "8/1/2023 @ 13:40",
+      "creator": "Ash",
+      "destination": "Ibra",
       "id": 9
     },
     {
-      "content": "yoo\n",
-      "timestamp": "7/1/2023 @ 12:38",
+      "content": "dasd\n",
+      "timestamp": "8/1/2023 @ 13:40",
       "creator": "Ash",
       "destination": "Ibra",
       "id": 10
     },
     {
-      "content": "what happened\n",
-      "timestamp": "7/1/2023 @ 12:38",
+      "content": "asdad\n",
+      "timestamp": "8/1/2023 @ 13:40",
       "creator": "Ash",
       "destination": "Ibra",
       "id": 11
-    },
-    {
-      "content": "asdsa\n",
-      "timestamp": "7/1/2023 @ 12:42",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 12
-    },
-    {
-      "content": "dasd\n",
-      "timestamp": "7/1/2023 @ 12:42",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 13
-    },
-    {
-      "content": "sda\n",
-      "timestamp": "7/1/2023 @ 12:42",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 14
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:42",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 15
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:42",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 16
-    },
-    {
-      "content": "asdasd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 17
-    },
-    {
-      "content": "masd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 18
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 19
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 20
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 21
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 22
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 23
-    },
-    {
-      "content": "ökmaöksmd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 24
-    },
-    {
-      "content": "ljnasd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 25
-    },
-    {
-      "content": "lmasd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 26
-    },
-    {
-      "content": "lmlkamsd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 27
-    },
-    {
-      "content": "lkmasd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 28
-    },
-    {
-      "content": "lkmasd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 29
-    },
-    {
-      "content": "lkamsd\n",
-      "timestamp": "7/1/2023 @ 12:45",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 30
-    },
-    {
-      "content": "lkmads\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 31
-    },
-    {
-      "content": "lkmasd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 32
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 33
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 34
-    },
-    {
-      "content": "amnsd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 35
-    },
-    {
-      "content": "ljnasd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 36
-    },
-    {
-      "content": "jansd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 37
-    },
-    {
-      "content": "lkamsd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 38
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 39
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 40
-    },
-    {
-      "content": "sdad\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 41
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 42
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 43
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 44
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 45
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 46
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 47
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 48
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 49
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:46",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 50
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 51
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 52
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 53
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 54
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 55
-    },
-    {
-      "content": "s\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 56
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 57
-    },
-    {
-      "content": "asdasd\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 58
-    },
-    {
-      "content": "asd\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 59
-    },
-    {
-      "content": "asdasd\n",
-      "timestamp": "7/1/2023 @ 12:47",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 60
-    },
-    {
-      "content": "asdasd\n",
-      "timestamp": "7/1/2023 @ 12:48",
-      "creator": "Ash",
-      "destination": "Ibra",
-      "id": 61
-    },
-    {
-      "content": "asdsad\n",
-      "timestamp": "7/1/2023 @ 12:48",
-      "creator": "Ibra",
-      "destination": "Ash",
-      "id": 62
     }
   ]
 }

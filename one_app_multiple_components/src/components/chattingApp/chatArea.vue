@@ -22,11 +22,7 @@ name: "chatArea",
     scrolledFirstTime: false,
   }
   },
-  // data(){
-  // // return {
-  // //   isChatter: false,
-  // // }
-  // // },
+
   methods:{
   checkIsChatter(message){
 

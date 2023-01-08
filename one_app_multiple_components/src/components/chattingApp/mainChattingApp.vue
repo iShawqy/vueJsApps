@@ -1,16 +1,17 @@
 <template>
 <div class="mainAppContainer">
+  <welcome-page v-if="!loggedIn" @emittedUser="selectChatter"></welcome-page>
   <div class="homeViewContainer">
-    <div class="homeView" v-if="!ready">
-  <div class="labelSelectContainer">
-      <label class="label" for="comboBox">Who are you?</label>
-  <select  class="selectStyle" id="comboBox" v-model="chatterName"
-           @change="selectChatter()">
-  <option disabled value="">Please select who you are</option>
-  <option  v-for="user in users" :key="user.id">{{user.name}}</option>
-</select>
+    <div class="homeView" v-if="loggedIn && !ready">
+<!--  <div class="labelSelectContainer">-->
+<!--      <label class="label" for="comboBox">Who are you?</label>-->
+<!--  <select  class="selectStyle" id="comboBox" v-model="chatterName"-->
+<!--           @change="selectChatter()">-->
+<!--  <option disabled value="">Please select who you are</option>-->
+<!--  <option  v-for="user in users" :key="user.id">{{user.name}}</option>-->
+<!--</select>-->
 
-    </div>
+<!--    </div>-->
 
   <div class="labelSelectContainer">
       <label class="label" for="comboBox1">Chat with:</label>
@@ -64,11 +65,11 @@ import axios from "axios";
 import chatHead from "@/components/chattingApp/chatHead";
 import chatArea from "@/components/chattingApp/chatArea";
 import messageInputArea from "@/components/chattingApp/messageInputArea";
-
+import welcomePage from "@/components/chattingApp/welcomePage";
 
 export default {
 name: "mainChattingApp",
-components: {chatHead, chatArea, messageInputArea},
+components: {chatHead, chatArea, messageInputArea, welcomePage},
 mounted () {
   this.fetchUsers();
   this.createChatters();
@@ -81,6 +82,7 @@ mounted () {
 },
 data(){
   return {
+    loggedIn: false,
     users: [],
     chatterName: '',
     chatter: {},
@@ -124,17 +126,7 @@ methods: {
       console.log(error)
     })
   },
-  // fetchMessages(){
-  //   axios.get(this.messagesUrl)
-  //   .then(response => {
-  //     this.messages = response.data;
-  //     this.createChatters();
-  //
-  //   })
-  //   .catch( error => {
-  //     console.log(error)
-  //   })
-  // },
+
   fetchLatestMessages(){
     if (this.chatStarted) {
       axios.get(this.messagesUrl)
@@ -188,10 +180,12 @@ methods: {
     this.startChat();
 
   },
-  selectChatter(){
+  selectChatter(data){
+    this.loggedIn = true;
     for (let i=0; i<this.users.length; i++) {
-      if (this.users[i].name == this.chatterName) {
+      if (this.users[i].name == data.username) {
         this.chatter = this.users[i];
+        this.chatterName = this.chatter.name;
       }
     }
     this.updateChattersChatteesLists();
@@ -258,12 +252,15 @@ methods: {
     this.chatStarted = false;
     this.lastMessageId = 0;
     this.newMessages = false;
+    this.loggedIn = false;
+    this.nrMsgsBarValue= 0;
+    this.lenMsgsBarValue = 0;
     this.fetchUsers();
     // this.fetchMessages();
     this.createChatters();
   },
   sendMessage(){
-    this.$refs.msgInputArea.sendMessage(false);
+    this.$refs.msgInputArea.sendMessageWithSendBtn();
   },
   updateChatteeStatus(){
     if (this.chatStarted){

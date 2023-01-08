@@ -63,10 +63,11 @@ value(){
   align-items: center;
   width: 300px;
   height: 15px;
-  background-color: #a6b3ff;
+  background-color: #324951;
+  border: none;
   border-radius: 10px;
-  border: solid;
-  border-color: #a6b3ff;
+
+
   margin: 10px;
 }
 
