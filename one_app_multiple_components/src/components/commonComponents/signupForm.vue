@@ -27,8 +27,22 @@ methods:{
       email: this.email,
       password: this.password
     }
-    this.$emit("signup", data)
+    if (this.checkFieldsNotEmpty(data.username) &&
+    this.checkFieldsNotEmpty(data.email) && this.checkFieldsNotEmpty(data.password)){
+      this.$emit("signup", data)
+    } else {
+      this.$toast.error( 'Please fill all the empty fields!', {position: "bottom"})
+    }
+
   },
+  checkFieldsNotEmpty(data){
+    if (!data.replace(/\s/g, '').length) {
+      return false
+    }
+    else {
+      return true
+    }
+    },
 }
 }
 </script>

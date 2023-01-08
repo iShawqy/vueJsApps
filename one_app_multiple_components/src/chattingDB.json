@@ -12,133 +12,49 @@
       "name": "Ash",
       "email": "ash.gh92@gmail.com",
       "password": "ash",
-      "status": "Online"
+      "status": "Offline"
     },
     {
-      "id": 3,
-      "name": "Ghost",
-      "email": "ghost.gh92@gmail.com",
-      "password": "ashghost",
-      "status": "Online"
-    },
-    {
-      "id": 4,
-      "name": "Batman",
-      "email": "batman.gh92@gmail.com",
-      "password": "ashghost",
-      "status": "Online"
-    },
-    {
-      "name": "newUser",
-      "email": "newUser@gmail.com",
-      "password": "hasdhasdh",
-      "status": "offline",
-      "id": 5
-    },
-    {
-      "name": "newUser1",
-      "email": "newUser@gmail.com1",
-      "password": "asd",
-      "status": "offline",
-      "id": 6
-    },
-    {
-      "name": "Ibra1",
-      "email": "ibra1@gmail.com",
-      "password": "asdasdasd",
-      "status": "offline",
-      "id": 7
-    },
-    {
-      "name": "asd",
-      "email": "sada",
-      "password": "asdasd",
-      "status": "offline",
-      "id": 8
-    },
-    {
-      "name": "asdk",
-      "email": "k",
-      "password": "kk",
-      "status": "offline",
-      "id": 9
-    },
-    {
-      "name": "asdasdasdasdasd",
-      "email": "asdasdasdasdasd",
-      "password": "asdasd",
-      "status": "offline",
-      "id": 10
-    },
-    {
-      "name": "daf",
-      "email": "asd",
-      "password": "asd",
-      "status": "offline",
-      "id": 11
-    },
-    {
-      "name": "asdasdasdasd",
-      "email": "asdasdasdasdaaaasd",
-      "password": "asd",
-      "status": "offline",
-      "id": 12
-    },
-    {
-      "name": "asdadaaadasdas",
-      "email": "aaasdasdaaa",
-      "password": "asdasa",
-      "status": "offline",
-      "id": 13
-    },
-    {
-      "name": "asdakisksj",
-      "email": "jaskksos,sk",
-      "password": "jsjksksk",
-      "status": "offline",
-      "id": 14
-    },
-    {
-      "name": "dasdaaaaasdasdasd",
-      "email": "asdaaaasdasasadaaa",
-      "password": "asd",
-      "status": "offline",
-      "id": 15
-    },
-    {
-      "name": "dakakakak",
-      "email": "kkksksksk",
-      "password": "kksksk",
+      "name": "Anne Hathway",
+      "email": "anne@gmail.com",
+      "password": "anne",
       "status": "offline",
       "id": 16
     },
     {
-      "name": "benunik",
-      "email": "nbznjö@kdiod",
-      "password": "kdafa",
+      "name": "Batman",
+      "email": "batman@gmail.com",
+      "password": "batman",
       "status": "offline",
       "id": 17
     },
     {
-      "name": "asdlmasdlas",
-      "email": "ölkm,aösld,",
-      "password": "öl,aölsd,aösd",
+      "name": "default",
+      "email": "default@gmail.com",
+      "password": "default",
       "status": "offline",
       "id": 18
     },
     {
-      "name": "jshjshzkjfku",
-      "email": "jjdhdzhrmfk",
-      "password": "asad",
+      "name": "Ghost",
+      "email": "ghost@gmail.com",
+      "password": "ghost",
       "status": "offline",
       "id": 19
     },
     {
-      "name": "Jenny",
-      "email": "jenny@gmail.com",
-      "password": "jenny",
-      "status": "Offline",
+      "name": "Ryan Reynolds",
+      "email": "ryan@gmail.com",
+      "password": "ryan",
+      "status": "offline",
       "id": 20
+    },
+    {
+      "name": "Tom Cruise",
+      "email": "tom@gmail.com",
+      "password": "tom",
+      "status": "offline",
+      "id": 21
     }
   ],
   "messages": [
@@ -218,6 +134,83 @@
       "creator": "Ash",
       "destination": "Ibra",
       "id": 11
+    },
+    {
+      "content": "asd\n",
+      "timestamp": "8/1/2023 @ 21:22",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 12
+    },
+    {
+      "content": "dasd\n",
+      "timestamp": "8/1/2023 @ 21:22",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 13
+    },
+    {
+      "content": "asdas\n",
+      "timestamp": "8/1/2023 @ 21:22",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 14
+    },
+    {
+      "content": "asd\n",
+      "timestamp": "8/1/2023 @ 21:22",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 15
+    },
+    {
+      "content": "asdad\n",
+      "timestamp": "8/1/2023 @ 21:22",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 16
+    },
+    {
+      "content": "asdasd\n",
+      "timestamp": "8/1/2023 @ 21:22",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 17
+    },
+    {
+      "content": "asd\n",
+      "timestamp": "8/1/2023 @ 21:24",
+      "creator": "Ibra",
+      "destination": "Ghost",
+      "id": 18
+    },
+    {
+      "content": "asda\n",
+      "timestamp": "8/1/2023 @ 21:26",
+      "creator": "Ibra",
+      "destination": "Ryan Reynolds",
+      "id": 19
+    },
+    {
+      "content": "asdasd\n",
+      "timestamp": "8/1/2023 @ 21:26",
+      "creator": "Ibra",
+      "destination": "Ryan Reynolds",
+      "id": 20
+    },
+    {
+      "content": "aasd\n",
+      "timestamp": "8/1/2023 @ 21:26",
+      "creator": "Ibra",
+      "destination": "Ryan Reynolds",
+      "id": 21
+    },
+    {
+      "content": "yoo anne\n",
+      "timestamp": "8/1/2023 @ 21:26",
+      "creator": "Ibra",
+      "destination": "Anne Hathway",
+      "id": 22
     }
   ]
 }

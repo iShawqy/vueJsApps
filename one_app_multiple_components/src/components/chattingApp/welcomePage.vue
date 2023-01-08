@@ -8,8 +8,12 @@
     Signup
   </button>
     </div>
-    <login-form v-if="loginSelector" @login="login" ref="refLoginPage"></login-form>
-    <signup-form v-if="!loginSelector" @signup="signup"></signup-form>
+    <login-form v-if="loginSelector" @login="login" ref="refLoginPage"
+                @keyup.enter="emitDataFromLoginForm"
+    ></login-form>
+    <signup-form v-if="!loginSelector" @signup="signup" ref="refSignupPage"
+                 @keyup.enter="emitDataFromSignupForm"
+    ></signup-form>
   </div>
 
 </template>
@@ -137,6 +141,7 @@ mounted() {
     }
     return userExist
   },
+
   setLoginPageData(){
     if (this.userJustSignnedUp){
       this.$refs.refLoginPage.updateUsernamePassword(this.userDataAfterSignup);
@@ -145,7 +150,13 @@ mounted() {
       this.userDataAfterSignup.password = "";
     }
 
-  }
+  },
+  emitDataFromLoginForm(){
+    this.$refs.refLoginPage.login()
+  },
+  emitDataFromSignupForm(){
+    this.$refs.refSignupPage.signup()
+  },
 }
 }
 </script>
@@ -206,7 +217,6 @@ mounted() {
 }
 
 .btnColor{
-
   background-color: #176b5b;
 }
 </style>

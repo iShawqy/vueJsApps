@@ -8,15 +8,16 @@
 <!--              :class="{dangerStyle:nrMsgsBarValue>=60, moderateStyle:nrMsgsBarValue<60 && nrMsgsBarValue>40}"-->
 
 <!--              max="100"></progress>-->
+    <div class="pictureNameStatusContainer">
+      <img :src="profilePhoto">
+      <div class="userNameStatusContainer">
+        {{chattee}}
+      <div class="italicText">
+        {{status}}
+      </div>
+      </div>
+    </div>
 
-    <img :src="profilePhoto">
-    <div class="userNameStatusContainer">
-  {{chattee}}
-  <div class="italicText">
-    {{status}}
-  </div>
-
-</div>
     <cutom-progress-bar :value="lenMsgsBarValue">
 
     </cutom-progress-bar>
@@ -47,6 +48,11 @@ methods :{
     this.profilePhoto = '/usersPhotos/'+ this.chattee +'.png';
     // this.profilePhoto = 'logo.png';
   }
+},
+watch:{
+  chattee(){
+    this.getChatteePhoto()
+  }
 }
 
 }
@@ -58,11 +64,20 @@ methods :{
   width: 100%;
   height: 50px;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: rgb(32,44,51);
   border-radius: 5px;
 
+}
+
+.pictureNameStatusContainer{
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .userNameStatusContainer{
   display: flex;

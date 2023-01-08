@@ -1,31 +1,45 @@
 <template>
 <div class="mainAppContainer">
   <welcome-page v-if="!loggedIn" @emittedUser="selectChatter"></welcome-page>
-  <div class="homeViewContainer">
-    <div class="homeView" v-if="loggedIn && !ready">
+<!--  <div class="homeViewContainer">-->
+<!--    <div class="homeView" v-if="loggedIn && !ready">-->
+
+
 <!--  <div class="labelSelectContainer">-->
-<!--      <label class="label" for="comboBox">Who are you?</label>-->
-<!--  <select  class="selectStyle" id="comboBox" v-model="chatterName"-->
-<!--           @change="selectChatter()">-->
-<!--  <option disabled value="">Please select who you are</option>-->
-<!--  <option  v-for="user in users" :key="user.id">{{user.name}}</option>-->
+<!--      <label class="label" for="comboBox1">Chat with:</label>-->
+<!--  <select  class="selectStyle" id="comboBox1" v-model="chatteeName"-->
+<!--  @change="selectChattee()">-->
+<!--  <option disabled value="">Please select who you want to chat with</option>-->
+<!--  <option  v-for="chatteeUser in chattees" :key="chatteeUser.id">{{chatteeUser.name}}</option>-->
 <!--</select>-->
 
 <!--    </div>-->
+<!--</div>-->
+<!--  </div>-->
 
-  <div class="labelSelectContainer">
-      <label class="label" for="comboBox1">Chat with:</label>
-  <select  class="selectStyle" id="comboBox1" v-model="chatteeName"
-  @change="selectChattee()">
-  <option disabled value="">Please select who you want to chat with</option>
-  <option  v-for="chatteeUser in chattees" :key="chatteeUser.id">{{chatteeUser.name}}</option>
-</select>
+  <div class="chatsViewChatViewContainer">
+    <div class="chatsMainContainer" v-if="loggedIn">
+      <div class="userInfoBar">
+        <img :src="ChatterProfilePhoto">
+        <div class="LabelStyle">
+          {{chatterName}}
+        </div>
 
+      </div>
+      <div class="chatsContainer">
+      <chat-card v-for="ch in chattees"
+                 :username="ch.name"
+                 :key="ch.id"
+                 @click="selectChatteeFromCard(ch)"
+      >
+
+      </chat-card>
+      </div>
+<!--      <button class="BtnStyle btnRed" v-if="ready" @click="logOut">-->
+<!--      Log-out-->
+<!--    </button>-->
     </div>
-</div>
-  </div>
-
-  <div class="chatViewContainer" v-if="ready">
+    <div class="chatViewContainer" v-if="ready">
     <chat-head :chattee="chatteeName"
                :status="chattee.status"
                v-if="ready"
@@ -50,9 +64,9 @@
 
 
   </div>
-  <button class="BtnStyle btnRed" v-if="ready" @click="logOut">
-      Log-out
-    </button>
+  </div>
+
+
 
 
 </div>
@@ -66,10 +80,11 @@ import chatHead from "@/components/chattingApp/chatHead";
 import chatArea from "@/components/chattingApp/chatArea";
 import messageInputArea from "@/components/chattingApp/messageInputArea";
 import welcomePage from "@/components/chattingApp/welcomePage";
+import chatCard from "@/components/chattingApp/chatCard";
 
 export default {
 name: "mainChattingApp",
-components: {chatHead, chatArea, messageInputArea, welcomePage},
+components: {chatHead, chatArea, messageInputArea, welcomePage, chatCard},
 mounted () {
   this.fetchUsers();
   this.createChatters();
@@ -108,9 +123,9 @@ data(){
       chatter:0,
       chattee:0
     },
-
     nrMsgsBarValue:0,
     lenMsgsBarValue:0,
+    ChatterProfilePhoto:'',
 
 
   }
@@ -126,7 +141,6 @@ methods: {
       console.log(error)
     })
   },
-
   fetchLatestMessages(){
     if (this.chatStarted) {
       axios.get(this.messagesUrl)
@@ -182,10 +196,12 @@ methods: {
   },
   selectChatter(data){
     this.loggedIn = true;
+
     for (let i=0; i<this.users.length; i++) {
       if (this.users[i].name == data.username) {
         this.chatter = this.users[i];
         this.chatterName = this.chatter.name;
+        this.getChatterProfilePhoto();
       }
     }
     this.updateChattersChatteesLists();
@@ -300,14 +316,30 @@ methods: {
 
     if (this.nrMsgs.total>0){
       this.nrMsgsBarValue = Math.floor( (this.nrMsgs.chatter/this.nrMsgs.total) * 100);
+    } else {
+      this.nrMsgsBarValue = 0
     }
 
     if (this.lenMsgs.total>0){
       this.lenMsgsBarValue = Math.floor( (this.lenMsgs.chatter/this.lenMsgs.total) * 100);
+    } else {
+      this.lenMsgsBarValue = 0;
     }
 
 
   },
+  getChatterProfilePhoto(){
+    this.ChatterProfilePhoto = '/usersPhotos/'+ this.chatterName +'.png';
+  },
+  selectChatteeFromCard(chattee){
+
+    this.chattee = chattee;
+    this.chatteeName = chattee.name;
+
+
+
+    this.startChat();
+  }
 }
 }
 </script>
@@ -339,23 +371,72 @@ methods: {
 
 .chatViewContainer{
   display: flex;
-  width: 80vw;
-  height: 80vh;
-  min-width: 600px;
-  min-height: 600px;
+  width: 70vw;
+  height: 100vh;
+  min-width: 400px;
+  min-height: 400px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  /*position: absolute;*/
   background-color: rgb(32,44,51);
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
+  /*left: 50%;*/
+  /*top: 50%;*/
+  /*-webkit-transform: translate(-50%, -50%);*/
+  /*transform: translate(-50%, -50%);*/
+  /*border-radius: 10px;*/
 }
 
+.chatsViewChatViewContainer{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-width: 600px;
+  min-height: 600px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /*position: absolute;*/
+  background-color: rgb(32,44,51);
+}
 
+.chatsMainContainer{
+  display: flex;
+  width: 30%;
+  height: 100%;
+  min-width: 100px;
+  /*min-height: 600px;*/
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /*position: absolute;*/
+  background-color: #0f2021;
+
+}
+
+.userInfoBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+  height: 50px;
+  background-color: rgb(32,44,51);
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.chatsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #0f2021;
+}
 
 .homeView{
   display: flex;
@@ -432,5 +513,21 @@ methods: {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+img {
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.LabelStyle{
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 </style>

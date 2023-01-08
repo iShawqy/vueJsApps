@@ -84,46 +84,6 @@ clearInterval(this.statusInterval)
     creator: this.chatter.name,
     destination: this.chattee.name,
       }
-    // if (!event) {
-    // if (this.message != "" && this.message != "\n") {
-    //   // var currentdate = new Date();
-    //   // var datetime = currentdate.getDate() + "/"
-    //   //             + (currentdate.getMonth()+1)  + "/"
-    //   //             + currentdate.getFullYear() + " @ "
-    //   //             + currentdate.getHours() + ":"
-    //   //             + currentdate.getMinutes()
-    //   //
-    //   //
-    //   //
-    //   // var data = {
-    //   //   content: this.message,
-    //   //   timestamp: datetime,
-    //   //   creator: this.chatter.name,
-    //   //   destination: this.chattee.name,
-    //   // }
-    //   axios({
-    //       method: 'post',
-    //       url:this.messagesUrl,
-    //       data: data
-    //     })
-    //     .then(response => {
-    //       this.response = response;
-    //       this.message = "";
-    //       this.$toast.success('sent',  {
-    //       position: "bottom",
-    //       duration: 250})
-    //     })
-    //     .catch(error => {
-    //       this.response = error;
-    //       this.$toast.error('Error while logging you in', {
-    //       position: "bottom"});
-    //     })
-    // }
-    // else {
-    //   this.message = "";
-    // }
-    // }
-
       if (!event.shiftKey) {
         if (this.checkValidMessage()){
           axios({
@@ -155,7 +115,6 @@ clearInterval(this.statusInterval)
   },
   checkValidMessage(){
     if (!this.message.replace(/\s/g, '').length) {
-
       return false
     }
     else {

@@ -24,12 +24,25 @@ methods:{
       username: this.username,
       password: this.password
     }
-    this.$emit("login", data);
+    if (this.checkFieldsNotEmpty(data.username) && this.checkFieldsNotEmpty(data.password)){
+      this.$emit("login", data);
+    } else {
+      this.$toast.error( 'Please fill all the empty fields!', {position: "bottom"})
+    }
+
   },
   updateUsernamePassword(data){
     this.username = data.username;
     this.password = data.password;
-  }
+  },
+  checkFieldsNotEmpty(data){
+    if (!data.replace(/\s/g, '').length) {
+      return false
+    }
+    else {
+      return true
+    }
+    },
 }
 }
 </script>
