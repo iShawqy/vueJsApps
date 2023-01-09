@@ -6,9 +6,7 @@
   <div class="chatsViewChatViewContainer" v-if="loggedIn">
     <div class="chatsMainContainer" >
       <div class="userInfoBar">
-        <button class="BtnStyle btnRed" @click="logOut">
-          Log-out
-        </button>
+
         <img :src="ChatterProfilePhoto">
         <div class="LabelStyle">
           {{chatter.name}}
@@ -19,10 +17,17 @@
       <chat-card v-for="ch in chattees"
                  :username="ch.name"
                  :key="ch.id"
+                 :last-msg="lastMessagesInEachChat[ch.name+'_'+chatter.name]"
+                 :status="ch.status"
                  @click="selectChatteeFromCard(ch)"
       >
 
       </chat-card>
+      </div>
+      <div class="userActionBar">
+        <button class="BtnStyle btnRed" @click="logOut">
+          &#9756; Logout
+        </button>
       </div>
 
     </div>
@@ -52,12 +57,7 @@
       <button class="BtnStyle btnGreen" @click="sendMessage">
       Send
     </button>
-
     </div>
-
-
-
-
   </div>
   </div>
 
@@ -84,7 +84,10 @@ mounted () {
   this.fetchUsers();
   setInterval(this.fetchLatestMessages, 250);
   setInterval(this.updateChatteeStatus, 500);
-  setInterval(this.compileStats, 1000)
+  setInterval(this.updateChatteesStatus, 500);
+  setInterval(this.compileStats, 1000);
+  setInterval(this.updateLastMessagesInEachChat, 1000);
+
 
 
 },
@@ -92,6 +95,7 @@ data(){
   return {
     loggedIn: false,
     users: [],
+    lastMessagesInEachChat:{},
     // chatterName: '',
     chatter: {},
     // chatteeName: '',
@@ -119,17 +123,80 @@ data(){
     nrMsgsBarValue:0,
     lenMsgsBarValue:0,
     ChatterProfilePhoto:'',
+    allMsgs: [],
+
+
+    
 
 
   }
 },
 methods: {
+  createLastMessagesInEachChatDict(){
+
+    for (let i=0; i<this.chattees.length; i++){
+      if (this.chattees[i].name != this.chatter.name){
+
+        this.lastMessagesInEachChat[this.chattees[i].name+'_'+this.chatter.name] = {
+          timestampInSec: "0",
+          timestamp:'',
+          content: '',
+          creator: this.chattees[i].name,
+          destination: this.chatter.name,
+          id:0,
+        };
+
+    //     for (let ii=0; ii<this.allMsgs.length; ii++){
+    //
+    //     if (this.allMsgs[ii].creator == this.chattees[i].name && this.allMsgs[ii].destination == this.chatter.name){
+    //     this.lastMessagesInEachChat[this.chattees[i].name+'_'+this.chatter.name] = this.allMsgs[ii];
+    //   }
+    // }
+      }
+
+
+    }
+
+  },
+
+  updateLastMessagesInEachChat(){
+    if (this.loggedIn){
+      // var tsInSec = 0;
+      // var toCompareTsInSec = 0;
+      var key = '';
+      for (let i=0; i<this.chattees.length; i++){
+      // this.lastMessagesInEachChat[this.chattees[i].name+'_'+this.chatter.name] = {};
+        for (let ii=0; ii<this.allMsgs.length; ii++){
+          if (this.allMsgs[ii].creator == this.chattees[i].name &&
+              this.allMsgs[ii].destination == this.chatter.name){
+            key = this.chattees[i].name+'_'+this.chatter.name
+            // tsInSec = parseInt(this.lastMessagesInEachChat[key].timestampInSec);
+            // toCompareTsInSec = parseInt(this.allMsgs[ii].timestampInSec);
+        // this.lastMessagesInEachChat[this.chattees[i].name+'_'+this.chatter.name] = this.allMsgs[ii];
+            if (this.allMsgs[ii].id > this.lastMessagesInEachChat[key].id){
+                this.lastMessagesInEachChat[key].timestampInSec = this.allMsgs[ii].timestampInSec;
+                this.lastMessagesInEachChat[key].timestamp = this.allMsgs[ii].timestamp;
+                this.lastMessagesInEachChat[key].content = this.allMsgs[ii].content;
+                this.lastMessagesInEachChat[key].creator = this.allMsgs[ii].creator;
+                this.lastMessagesInEachChat[key].destination = this.allMsgs[ii].destination;
+                this.lastMessagesInEachChat[key].id = this.allMsgs[ii].id;
+
+              }
+            }
+          }
+        }
+    }
+
+
+    
+  },
   fetchUsers(){
+    console.log('here')
     axios.get(this.usersUrl)
     .then(response => {
       this.users = response.data;
       this.updateChatteesLists();
-      // this.createChatters();
+
     })
     .catch( error => {
       console.log(error)
@@ -139,13 +206,13 @@ methods: {
     if (this.loggedIn) {
       axios.get(this.messagesUrl)
     .then(response => {
-      var recievedMsgs = response.data;
+      this.allMsgs = response.data;
       var filteredMsgs = [];
-      for (let i=0; i<recievedMsgs.length; i++){
-        if (recievedMsgs[i].creator == this.chatter.name && recievedMsgs[i].destination == this.chattee.name){
-          filteredMsgs.push(recievedMsgs[i])
-        } else if (recievedMsgs[i].creator == this.chattee.name && recievedMsgs[i].destination == this.chatter.name){
-          filteredMsgs.push(recievedMsgs[i])
+      for (let i=0; i<this.allMsgs.length; i++){
+        if (this.allMsgs[i].creator == this.chatter.name && this.allMsgs[i].destination == this.chattee.name){
+          filteredMsgs.push(this.allMsgs[i])
+        } else if (this.allMsgs[i].creator == this.chattee.name && this.allMsgs[i].destination == this.chatter.name){
+          filteredMsgs.push(this.allMsgs[i])
         }
       }
       this.messages = filteredMsgs;
@@ -188,8 +255,9 @@ methods: {
   // },
   selectChatter(data){
     this.loggedIn = true;
-    this.chatter = data
+    this.chatter = data;
     this.getChatterProfilePhoto();
+    this.updateChatteesLists();
 
   },
   updateChatteesLists(){
@@ -202,7 +270,6 @@ methods: {
     }
     // console.log(this.chattees)
   },
-
   goOnline(){
     this.chatter.status = 'Online'
     axios({
@@ -225,7 +292,6 @@ methods: {
       })
 
   },
-
   goOffline(){
     this.chatter.status = 'Offline'
     axios({
@@ -275,6 +341,23 @@ methods: {
     .catch( error => {
       console.log(error)
     })
+    }
+
+  },
+
+  updateChatteesStatus(){
+    if (this.loggedIn && this.chattees.length > 0){
+      for (let i=0; i<this.chattees.length; i++){
+        axios.get(this.usersUrl+'/'+this.chattees[i].id)
+        .then(response => {
+          // console.log(response.data.status)
+          this.chattees[i].status = response.data.status;
+        })
+        .catch( error => {
+          console.log(error)
+        })
+      }
+
     }
 
   },
@@ -330,6 +413,7 @@ watch:{
     if (newValue) {
       this.goOnline();
       this.fetchUsers();
+      this.createLastMessagesInEachChatDict();
 
     } else {
       this.goOffline();
@@ -402,7 +486,7 @@ watch:{
   display: flex;
   width: 30%;
   height: 100%;
-  min-width: 100px;
+  min-width: 300px;
   /*min-height: 600px;*/
   flex-direction: column;
   justify-content: flex-start;
@@ -445,6 +529,20 @@ watch:{
   margin-left: 5px;
 }
 
+.userActionBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 96%;
+  height: 50px;
+  background-color: rgb(32,44,51);
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+
 .chatsContainer{
   display: flex;
   flex-direction: column;
@@ -454,6 +552,8 @@ watch:{
   height: 100%;
   overflow-y: auto;
   background-color: #0f2021;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .homeView{
@@ -516,6 +616,7 @@ watch:{
 
 }
 .btnRed{
+  font-size: 12px;
   background-color: #ff0000;
 }
 

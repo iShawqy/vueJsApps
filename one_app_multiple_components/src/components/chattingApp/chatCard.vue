@@ -1,25 +1,139 @@
 <template>
 <div class="chatCardMainContainer">
-  <img :src="loadedProfilePhoto">
+  <div class="outerImagBorders" :style="[defaultBorderStyle, offOnLineBorderStyle]">
+    <img :style="[imgDefaultStyle]" :src="loadedProfilePhoto">
+  </div>
+
+  <div class="usernameLastMsgContainer">
+    <div class="usernameLabel">
+      {{username}}
+    </div>
+    <div :style="[lastMsgLabel, lastMsgLabelOptionalStyle]">
+      {{parsedLastMsg}}
+    </div>
+  </div>
+  <div class="lastTSLabel">
+    {{parsedLastTs}}
+  </div>
 </div>
 </template>
 
 <script>
 export default {
 name: "chatCard",
-props:["username", "lastMsg", "timestamp"],
+props:["username", "lastMsg", "timestamp", "status"],
 data(){
   return {
     loadedProfilePhoto: '',
+    parsedLastMsg: '',
+    parsedLastTs: '',
+    imgDefaultStyle: {
+      borderRadius: "50%",
+      width: "50px",
+      height: "50px",
+      marginRight: "10px",
+      marginLeft: "10px",
+    },
+    defaultBorderStyle:{
+      display: "flex",
+      borderRadius: "50%",
+      width: "fit-content",
+      height: "fit-content",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    offOnLineBorderStyle:{
+      width: "fit-content",
+      height: "fit-content",
+    },
+
+    offlineBorderStyle:{
+      width: "fit-content",
+      height: "fit-content",
+    },
+
+    onlineBorderStyle:{
+      width: "55px",
+      height: "55px",
+      backgroundImage: "linear-gradient(to left, #743ad5, #00f15d)"
+    },
+
+    lastMsgLabel:{
+        fontSize: "14px",
+        fontFamily: "Arial",
+        marginBottom: "5px",
+    },
+    lastMsgLabelOptionalStyle:{
+      fontSize: "14px",
+    },
+    typingStyle: {
+      color: "#00c303",
+        fontSize: "14px",
+        fontFamily: "Arial",
+        fontStyle: "italic",
+
+    },
+
+    notTypingStyle:{
+      color: "#a0a0a0",
+        fontSize: "14px",
+        fontFamily: "Arial",
+        fontStyle: "normal",
+    }
+    // imgOffOnlineStyles:{
+    //   border: "none",
+    //
+    // },
+    // imgOnlineStyle:{
+    //   border:"none",
+    // },
+    // imgOfflineStyle:{
+    //   border: "none",
+    //
+    // }
   }
 },
 mounted() {
   this.getProfilePhoto();
+  setInterval(this.parseLastMsg, 500);
+  setInterval(this.checkStatus, 500);
 },
+
 methods:{
   getProfilePhoto(){
     this.loadedProfilePhoto = '/usersPhotos/'+ this.username +'.png';
-  }
+  },
+  parseLastMsg(){
+    try {
+      if (this.status == "typing...") {
+        this.parsedLastMsg = this.status;
+        this.parsedLastTs = '';
+        this.lastMsgLabelOptionalStyle = this.typingStyle;
+      } else {
+        this.parsedLastMsg = this.lastMsg.content;
+        this.parsedLastTs = this.lastMsg.timestamp;
+        this.lastMsgLabelOptionalStyle = this.notTypingStyle;
+      if (this.parsedLastMsg.length > 15){
+        this.parsedLastMsg = this.parsedLastMsg.slice(0, 15) + '...'
+      }
+      }
+
+
+    } catch (e){
+      this.lastMsgLabelOptionalStyle = this.notTypingStyle;
+      console.log(this.lastMsg);
+      this.parsedLastMsg = '';
+      this.parsedLastTs ='';
+      console.log('error parsing last msg')
+    }
+  },
+  checkStatus(){
+    if (this.status == "Online"){
+      this.offOnLineBorderStyle = this.onlineBorderStyle;
+    } else if (this.status == "Offline"){
+      this.offOnLineBorderStyle = this.offlineBorderStyle;
+    }
+  },
 }
 }
 </script>
@@ -27,9 +141,7 @@ methods:{
 <style scoped>
 .chatCardMainContainer{
   display: flex;
-
-  flex: 1 1 auto;
-  overflow-y: auto;
+  /*flex: 1 1 auto;*/
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
@@ -42,13 +154,44 @@ methods:{
   margin-top: 5px;
   margin-bottom: 5px;
 }
-img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+/*img {*/
+/*  border-radius: 50%;*/
+/*  width: 50px;*/
+/*  height: 50px;*/
+/*  margin-right: 10px;*/
+/*  margin-left: 10px;*/
+
+/*}*/
+
+.usernameLastMsgContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 40%;
+  min-height: 50px;
   margin-left: 10px;
+
+
 }
+
+.usernameLabel{
+  color: white;
+  font-size: 18px;
+  font-family: Arial;
+  margin-bottom: 5px;
+}
+
+
+
+.lastTSLabel{
+  width: 30%;
+  color: #a0a0a0;
+  font-size: 12px;
+  font-family: Arial;
+  margin-left: 5px;
+}
+
 
 
 </style>
