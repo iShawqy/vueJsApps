@@ -19,6 +19,7 @@
                  :key="ch.id"
                  :last-msg="lastMessagesInEachChat[ch.name+'_'+chatter.name]"
                  :status="ch.status"
+                 :unread-counter="ch.unreadCounter"
                  @click="selectChatteeFromCard(ch)"
       >
 
@@ -47,8 +48,9 @@
                :lenMsgsBarValue="lenMsgsBarValue">
     </chat-head>
     <chat-area :messages="messages"
-               :chatterName="chatter.name"
-               :chatteeName="chattee.name"
+               :chatter="chatter"
+               :chattee="chattee"
+               @clearUnreadCounter="clearUnreadCounterForAChat"
                ref="refChatArea"
 
     ></chat-area>
@@ -83,12 +85,11 @@ components: {chatHead, chatArea, messageInputArea, welcomePage, chatCard},
 mounted () {
   this.fetchUsers();
   setInterval(this.fetchLatestMessages, 250);
-  setInterval(this.updateChatteeStatus, 500);
+  setInterval(this.updateChatteeStatus, 250);
   setInterval(this.updateChatteesStatus, 500);
   setInterval(this.compileStats, 1000);
-  setInterval(this.updateLastMessagesInEachChat, 1000);
-
-
+  setInterval(this.updateLastMessagesInEachChat, 500);
+  setInterval(this.updateUnreadCounters, 100);
 
 },
 data(){
@@ -124,6 +125,8 @@ data(){
     lenMsgsBarValue:0,
     ChatterProfilePhoto:'',
     allMsgs: [],
+    clearingUnreadCounter: false,
+    newMessagesReceived: false,
 
 
     
@@ -132,6 +135,15 @@ data(){
   }
 },
 methods: {
+  clearUnreadCounterForAChat(chattee){
+    this.clearingUnreadCounter = true;
+    for (let i=0; i<this.chattees.length; i++){
+      if (this.chattees[i].id == chattee.id){
+        this.chattees[i].unreadCounter = 0;
+      }
+    }
+    this.clearingUnreadCounter = false;
+  },
   createLastMessagesInEachChatDict(){
 
     for (let i=0; i<this.chattees.length; i++){
@@ -141,6 +153,7 @@ methods: {
           timestampInSec: "0",
           timestamp:'',
           content: '',
+          status: '',
           creator: this.chattees[i].name,
           destination: this.chatter.name,
           id:0,
@@ -180,6 +193,7 @@ methods: {
                 this.lastMessagesInEachChat[key].creator = this.allMsgs[ii].creator;
                 this.lastMessagesInEachChat[key].destination = this.allMsgs[ii].destination;
                 this.lastMessagesInEachChat[key].id = this.allMsgs[ii].id;
+                this.lastMessagesInEachChat[key].status = this.allMsgs[ii].status;
 
               }
             }
@@ -207,6 +221,7 @@ methods: {
       axios.get(this.messagesUrl)
     .then(response => {
       this.allMsgs = response.data;
+      this.newMessagesReceived=true;
       var filteredMsgs = [];
       for (let i=0; i<this.allMsgs.length; i++){
         if (this.allMsgs[i].creator == this.chatter.name && this.allMsgs[i].destination == this.chattee.name){
@@ -216,15 +231,21 @@ methods: {
         }
       }
       this.messages = filteredMsgs;
+      var chatteeIdx = 0;
+      for (let idx=0; idx<this.chattees.length; idx++){
+        if (this.chattees[idx].id == this.chattee.id){
+          chatteeIdx = idx;
+        }
+      }
       for (let i=0; i<this.messages.length; i++) {
-        if (this.messages[i].id > this.lastMessageId) {
+        if (this.messages[i].id > this.chattees[chatteeIdx].lastMsgId) {
           this.newMessages = true;
-          this.lastMessageId = this.messages[i].id
+          this.chattees[chatteeIdx].lastMsgId = this.messages[i].id;
 
         }
       }
       if (this.newMessages){
-         this.$refs.refChatArea.scrollToLastMessage(this.lastMessageId);
+         this.$refs.refChatArea.scrollToLastMessage(this.chattees[chatteeIdx].lastMsgId);
          this.newMessages = false;
       }
 
@@ -262,9 +283,13 @@ methods: {
   },
   updateChatteesLists(){
     this.chattees = [];
+    var data = {};
     for (let i=0; i<this.users.length; i++) {
       if (this.users[i].name != this.chatter.name) {
-        this.chattees.push(this.users[i]);
+        data = this.users[i];
+        data["unreadCounter"] = 0;
+        data["lastMsgId"] = 0;
+        this.chattees.push(data);
       }
 
     }
@@ -344,7 +369,6 @@ methods: {
     }
 
   },
-
   updateChatteesStatus(){
     if (this.loggedIn && this.chattees.length > 0){
       for (let i=0; i<this.chattees.length; i++){
@@ -405,7 +429,25 @@ methods: {
     this.chattee = chattee;
     // this.chatteeName = chattee.name;
     // this.startChat();
-  }
+  },
+  updateUnreadCounters(){
+    if (!this.clearingUnreadCounter && this.newMessagesReceived){
+      if (this.loggedIn && this.chattees.length>0 && this.allMsgs.length>0){
+      for (let i=0; i<this.chattees.length; i++){
+        this.chattees[i].unreadCounter = 0;
+        for (let ii=0; ii<this.allMsgs.length; ii++){
+          if (this.allMsgs[ii].creator == this.chattees[i].name && this.allMsgs[ii].destination == this.chatter.name) {
+            if (this.allMsgs[ii].status == "unread"){
+              this.chattees[i].unreadCounter += 1;
+            }
+          }
+        }
+      }
+    }
+      this.newMessagesReceived = false;
+    }
+
+  },
 },
 watch:{
   loggedIn(newValue){
@@ -509,7 +551,7 @@ watch:{
 .noChatteeSelectedAreaLabel{
 
   color: #7c7c7c;
-  font-size: 30px;
+  font-size: 24px;
   font-family: Arial;
   margin-top: 5px;
   margin-bottom: 5px;

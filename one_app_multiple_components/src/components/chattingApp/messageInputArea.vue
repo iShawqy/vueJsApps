@@ -44,6 +44,7 @@ clearInterval(this.statusInterval)
     var data = {
     content: this.message,
     timestamp: datetime,
+    status: "unread",
     timestampInSec: Math.floor(Date.now() / 1000).toString(),
     creator: this.chatter.name,
     destination: this.chattee.name,
@@ -81,6 +82,7 @@ clearInterval(this.statusInterval)
 
     var data = {
     content: this.message,
+    status: "unread",
     timestamp: datetime,
     timestampInSec: Math.floor(Date.now() / 1000).toString(),
     creator: this.chatter.name,

@@ -1,6 +1,7 @@
 <template>
 <div class="chatCardMainContainer">
   <div class="outerImagBorders" :style="[defaultBorderStyle, offOnLineBorderStyle]">
+
     <img :style="[imgDefaultStyle]" :src="loadedProfilePhoto">
   </div>
 
@@ -8,6 +9,7 @@
     <div class="usernameLabel">
       {{username}}
     </div>
+
     <div :style="[lastMsgLabel, lastMsgLabelOptionalStyle]">
       {{parsedLastMsg}}
     </div>
@@ -15,13 +17,17 @@
   <div class="lastTSLabel">
     {{parsedLastTs}}
   </div>
+  <div class="unreadLabelStyle" v-if="unreadCounter>0">
+      +{{unreadCounter}}
+    </div>
+
 </div>
 </template>
 
 <script>
 export default {
 name: "chatCard",
-props:["username", "lastMsg", "timestamp", "status"],
+props:["username", "lastMsg", "timestamp", "status", "unreadCounter"],
 data(){
   return {
     loadedProfilePhoto: '',
@@ -46,18 +52,15 @@ data(){
       width: "fit-content",
       height: "fit-content",
     },
-
     offlineBorderStyle:{
       width: "fit-content",
       height: "fit-content",
     },
-
     onlineBorderStyle:{
       width: "55px",
       height: "55px",
       backgroundImage: "linear-gradient(to left, #743ad5, #00f15d)"
     },
-
     lastMsgLabel:{
         fontSize: "14px",
         fontFamily: "Arial",
@@ -73,7 +76,6 @@ data(){
         fontStyle: "italic",
 
     },
-
     notTypingStyle:{
       color: "#a0a0a0",
         fontSize: "14px",
@@ -143,7 +145,7 @@ methods:{
   display: flex;
   /*flex: 1 1 auto;*/
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   width: 96%;
   min-height: 80px;
@@ -190,6 +192,24 @@ methods:{
   font-size: 12px;
   font-family: Arial;
   margin-left: 5px;
+}
+
+.unreadLabelStyle{
+  display: flex;
+  margin-right: 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-image: linear-gradient(to left, #743ad5, #dc07f5);
+  color: #ffffff;
+  font-size: 12px;
+  font-family: Arial;
+  transition: width 1s;
+  transition: height 1s;
+
 }
 
 
