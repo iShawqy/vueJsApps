@@ -11,7 +11,7 @@
     <div class="pictureNameStatusContainer">
       <img :src="profilePhoto">
       <div class="userNameStatusContainer">
-        {{chattee}}
+        {{username}}
       <div class="italicText">
         {{status}}
       </div>
@@ -33,7 +33,7 @@
 import cutomProgressBar from "@/components/commonComponents/cutomProgressBar";
 export default {
 name: "chatHead",
-props: ['chattee', 'status', 'nrMsgsBarValue', 'lenMsgsBarValue'],
+props: ['username', 'status', 'nrMsgsBarValue', 'lenMsgsBarValue'],
 components: {cutomProgressBar},
 mounted() {
   this.getChatteePhoto();
@@ -45,12 +45,13 @@ mounted() {
 },
 methods :{
   getChatteePhoto(){
-    this.profilePhoto = '/usersPhotos/'+ this.chattee +'.png';
+    console.log(this.username)
+    this.profilePhoto = '/usersPhotos/'+ this.username +'.png';
     // this.profilePhoto = 'logo.png';
   }
 },
 watch:{
-  chattee(){
+  username(){
     this.getChatteePhoto()
   }
 }

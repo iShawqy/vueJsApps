@@ -68,7 +68,7 @@ mounted() {
           this.$toast.success('Logged In!', {
             position: "bottom"});
           this.loggedIn = true;
-          this.$emit("emittedUser", data)
+          this.$emit("emittedUser", this.users[i])
           break
         }
       }
@@ -133,7 +133,7 @@ mounted() {
     var userExist = false;
     for (let i=0; i<this.users.length; i++) {
       if (this.users[i].name == username || this.users[i].email == email) {
-        console.log(this.users[i])
+        // console.log(this.users[i])
         this.$toast.error('Username and/or email already exists. Use another one!', {
           position: "bottom"})
         userExist = true;
