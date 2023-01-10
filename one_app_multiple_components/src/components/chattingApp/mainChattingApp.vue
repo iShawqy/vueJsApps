@@ -289,6 +289,7 @@ methods: {
         data = this.users[i];
         data["unreadCounter"] = 0;
         data["lastMsgId"] = 0;
+        
         this.chattees.push(data);
       }
 
