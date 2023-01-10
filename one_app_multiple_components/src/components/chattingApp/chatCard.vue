@@ -57,8 +57,8 @@ data(){
       height: "fit-content",
     },
     onlineBorderStyle:{
-      width: "55px",
-      height: "55px",
+      width: "58px",
+      height: "58px",
       backgroundImage: "linear-gradient(to left, #743ad5, #00f15d)"
     },
     lastMsgLabel:{
