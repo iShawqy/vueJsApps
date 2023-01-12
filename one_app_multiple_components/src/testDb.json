@@ -1,55 +1,49 @@
-{
-  "questionairs": [
-    {
-      "id": 1,
-      "title": "Questionaire 1",
-      "length": 5,
-      "creator": "Ibra",
-      "createdOn": "timestamp",
-      "description": "nothing",
-      "questions" : [
-        {
-          "id": 1,
-          "question": "whats your name?",
-          "choices" : ["choice 1", "choice 2", "choice 3", "choice 4"],
-          "correctAnswer": "choice 2"
-
-        }
-      ]
-    },
     {
       "id": 2,
-      "title": "Questionaire 2",
-      "length": 5,
-      "creator": "Ibra",
-      "createdOn": "timestamp",
-      "description": "nothing",
-      "questions" : [
-        {
-          "id": 1,
-          "question": "whats your name?",
-          "choices" : ["choice 1", "choice 2", "choice 3", "choice 4"],
-          "correctAnswer": "choice 2"
-
-        }
-      ]
+      "name": "Ash",
+      "email": "ash.gh92@gmail.com",
+      "password": "ash",
+      "status": "Online"
     },
     {
-      "id": 3,
-      "title": "Questionaire 3",
-      "length": 5,
-      "creator": "Ibra",
-      "createdOn": "timestamp",
-      "description": "nothing",
-      "questions" : [
-        {
-          "id": 1,
-          "question": "whats your name?",
-          "choices" : ["choice 1", "choice 2", "choice 3", "choice 4"],
-          "correctAnswer": "choice 2"
-
-        }
-      ]
+      "name": "Anne Hathway",
+      "email": "anne@gmail.com",
+      "password": "anne",
+      "status": "Online",
+      "id": 16
+    },
+    {
+      "name": "Batman",
+      "email": "batman@gmail.com",
+      "password": "batman",
+      "status": "Offline",
+      "id": 17
+    },
+    {
+      "name": "default",
+      "email": "default@gmail.com",
+      "password": "default",
+      "status": "offline",
+      "id": 18
+    },
+    {
+      "name": "Ghost",
+      "email": "ghost@gmail.com",
+      "password": "ghost",
+      "status": "Online",
+      "id": 19
+    },
+    {
+      "name": "Ryan Reynolds",
+      "email": "ryan@gmail.com",
+      "password": "ryan",
+      "status": "offline",
+      "id": 20
+    },
+    {
+      "name": "Tom Cruise",
+      "email": "tom@gmail.com",
+      "password": "tom",
+      "status": "offline",
+      "id": 21
     }
-  ]
-}

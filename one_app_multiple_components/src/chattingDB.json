@@ -2,24 +2,11 @@
   "users": [
     {
       "id": 1,
-      "name": "Ibras",
+      "name": "Ibra",
       "email": "ib.sh92@gmail.com",
       "password": "ibra",
       "status": "Offline"
-    },
-    {
-      "id": 2,
-      "name": "Ash",
-      "email": "ash.gh92@gmail.com",
-      "password": "ash",
-      "status": "Online"
-    },
-    {
-      "name": "Anne Hathway",
-      "email": "anne@gmail.com",
-      "password": "anne",
-      "status": "Online",
-      "id": 16
+
     },
     {
       "name": "Batman",
@@ -27,34 +14,6 @@
       "password": "batman",
       "status": "Offline",
       "id": 17
-    },
-    {
-      "name": "default",
-      "email": "default@gmail.com",
-      "password": "default",
-      "status": "offline",
-      "id": 18
-    },
-    {
-      "name": "Ghost",
-      "email": "ghost@gmail.com",
-      "password": "ghost",
-      "status": "Online",
-      "id": 19
-    },
-    {
-      "name": "Ryan Reynolds",
-      "email": "ryan@gmail.com",
-      "password": "ryan",
-      "status": "offline",
-      "id": 20
-    },
-    {
-      "name": "Tom Cruise",
-      "email": "tom@gmail.com",
-      "password": "tom",
-      "status": "offline",
-      "id": 21
     }
   ],
   "messages": [
@@ -2317,5 +2276,6 @@
       "destination": "Ibra",
       "id": 251
     }
-  ]
+  ],
+  "chats": []
 }

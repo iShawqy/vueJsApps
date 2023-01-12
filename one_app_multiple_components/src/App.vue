@@ -1,5 +1,5 @@
 <template>
-
+  <test-json-server-methods></test-json-server-methods>
   <div class="mainContainer" >
 <!--    <main-editable-questionaire>-->
 
@@ -31,6 +31,7 @@
 // import mainEditableQuestionaire from "@/components/editableQuestionaire/mainEditableQuestionaire";
 
 import mainChattingApp from "@/components/chattingApp/mainChattingApp";
+import testJsonServerMethods from "@/components/chattingApp/testJsonServerMethods";
 
 
 
@@ -38,7 +39,7 @@ import mainChattingApp from "@/components/chattingApp/mainChattingApp";
 export default {
 
   name: 'App',
-  components: {mainChattingApp},
+  components: {mainChattingApp, testJsonServerMethods},
 
 
 
