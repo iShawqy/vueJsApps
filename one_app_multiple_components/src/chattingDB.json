@@ -32,7 +32,7 @@
       "name": "default",
       "email": "default@gmail.com",
       "password": "default",
-      "status": "offline",
+      "status": "Offline",
       "id": 18
     },
     {
@@ -46,14 +46,14 @@
       "name": "Ryan Reynolds",
       "email": "ryan@gmail.com",
       "password": "ryan",
-      "status": "offline",
+      "status": "Offline",
       "id": 20
     },
     {
       "name": "Tom Cruise",
       "email": "tom@gmail.com",
       "password": "tom",
-      "status": "offline",
+      "status": "Offline",
       "id": 21
     }
   ],

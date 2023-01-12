@@ -1,0 +1,158 @@
+{
+  "products": [
+    {"id": 1,
+      "category": "electronics",
+      "brand": "Apple",
+      "name": "iPhone 14 ProMax",
+      "stockCount": 100,
+      "price": 999,
+      "prime": true,
+      "reviewStarsCount": 5
+    },
+    {"id": 2,
+      "category": "electronics",
+      "brand": "Apple",
+      "name": "iPhone 13 Pro",
+      "stockCount": 85,
+      "price": 799,
+      "prime": true,
+      "reviewStarsCount": 4
+    },
+    {"id": 3,
+      "category": "electronics",
+      "brand": "Samsung",
+      "name": "Galaxy 20x",
+      "stockCount": 70,
+      "price": 1100,
+      "prime": false,
+      "reviewStarsCount": 3
+    },
+
+    {"id": 4,
+      "category": "electronics",
+      "brand": "Samsung",
+      "name": "Galaxy 10smo",
+      "stockCount": 65,
+      "price": 499,
+      "prime": true,
+      "reviewStarsCount": 4
+    },
+
+    {"id": 5,
+      "category": "shoes",
+      "brand": "Nike",
+      "name": "AirForce1",
+      "stockCount": 2000,
+      "price": 199,
+      "prime": true,
+      "reviewStarsCount": 5
+    },
+
+    {"id": 6,
+      "category": "shoes",
+      "brand": "Adidas",
+      "name": "Contintal",
+      "stockCount": 1400,
+      "price": 99,
+      "prime": true,
+      "reviewStarsCount": 4
+    },
+
+    {"id": 7,
+      "category": "shoes",
+      "brand": "DocMartens",
+      "name": "Wintergrip leather Boots",
+      "stockCount":287,
+      "price": 179,
+      "prime": true,
+      "reviewStarsCount": 5
+    }
+  ],
+  "productsDetails": [
+    {
+      "id": 1,
+      "colors": [
+        "red",
+        "blue",
+        "grey"
+      ],
+      "description": "this is an iphone 14 ProMax",
+      "imagesPath": "1",
+      "sizes": ["128 GB", "256 GB"],
+      "nrImages": 3
+    },
+    {
+      "id": 2,
+      "colors": [
+        "green",
+        "red",
+        "white"
+      ],
+      "description": "this is an iphone 13 Pro",
+      "imagesPath": "2",
+      "sizes": ["128 GB", "256 GB"],
+      "nrImages": 3
+    },
+    {
+      "id": 3,
+      "colors": [
+        "red",
+        "blue",
+        "grey"
+      ],
+      "description": "this is a samsung Galaxy 20x",
+      "imagesPath": "3",
+      "sizes": ["512 GB", "1 TB"],
+      "nrImages": 3
+    },
+    {
+      "id": 4,
+      "colors": [
+        "white",
+        "green",
+        "red"
+      ],
+      "description": "this is a samsung Galaxy 10smo",
+      "imagesPath": "4",
+      "sizes": ["1 TB", "2 TB"],
+      "nrImages": 3
+    },
+    {
+      "id": 5,
+      "colors": [
+        "white",
+        "green",
+        "red"
+      ],
+      "description": "this is a nike airforce 1 shoes",
+      "imagesPath": "5",
+      "sizes": ["38", "39", "40", "41", "42"],
+      "nrImages": 3
+    },
+    {
+      "id": 6,
+      "colors": [
+        "white",
+        "yellow",
+        "black"
+      ],
+      "description": "this is an adidas contintal shoes",
+      "imagesPath": "6",
+      "sizes": ["38", "39", "40", "41", "42"],
+      "nrImages": 3
+    },
+     {
+      "id": 7,
+      "colors": [
+        "green",
+        "white",
+        "black"
+      ],
+      "description": "this is an DocMartens Boots",
+      "imagesPath": "7",
+      "sizes": ["38", "39", "40", "41", "42"],
+      "nrImages": 3
+    }
+  ],
+  "basket": []
+}

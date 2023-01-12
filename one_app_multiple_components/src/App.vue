@@ -1,12 +1,13 @@
 <template>
 
   <div class="mainContainer" >
+    <main-my-store-app></main-my-store-app>
 <!--    <main-editable-questionaire>-->
 
 <!--    </main-editable-questionaire>-->
-    <main-chatting-app>
+<!--    <main-chatting-app>-->
 
-    </main-chatting-app>
+<!--    </main-chatting-app>-->
 
 <!--  <main-movable-elements>-->
 
@@ -30,7 +31,8 @@
 // import axios from 'axios';
 // import mainEditableQuestionaire from "@/components/editableQuestionaire/mainEditableQuestionaire";
 
-import mainChattingApp from "@/components/chattingApp/mainChattingApp";
+// import mainChattingApp from "@/components/chattingApp/mainChattingApp";
+import mainMyStoreApp from "@/components/myStore/mainMyStoreApp";
 
 
 
@@ -38,7 +40,7 @@ import mainChattingApp from "@/components/chattingApp/mainChattingApp";
 export default {
 
   name: 'App',
-  components: {mainChattingApp},
+  components: {mainMyStoreApp},
 
 
 

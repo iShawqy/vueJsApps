@@ -72,7 +72,6 @@ value(){
 }
 
 .valueLable{
-
   color: white;
   font-size: 10px;
   font-family: Arial;
