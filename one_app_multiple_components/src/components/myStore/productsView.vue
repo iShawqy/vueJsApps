@@ -1,5 +1,5 @@
 <template>
-<div class="productsViewContainer animate__animated animate__fadeIn" v-if="show">
+<div class="productsViewContainer animate__animated animate__fadeIn">
   <product-card v-for="product in products" :product-id="product.id"
                 :key="product.id"
                 @click="selectProduct(product.id)"
@@ -15,16 +15,15 @@ export default {
   name: "productsView",
   components:{productCard},
   data(){return {
-    show: true,
+
   }},
   props:["products"],
   methods:{
     selectProduct(id){
-      this.show = false;
+      this.$emit("productSelected", id)
+
     },
-    showAllProducts(){
-      this.show = true;
-    }
+
   }
 }
 </script>
@@ -42,7 +41,7 @@ export default {
   justify-content: center;
   align-items: center;
   /*border-color: white;*/
-  border: solid 2px white;
+  /*border: solid 2px white;*/
   /*position: absolute;*/
   /*background-color: white;*/
   margin-top: 5px;

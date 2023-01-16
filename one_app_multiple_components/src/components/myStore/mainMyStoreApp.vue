@@ -9,11 +9,17 @@
                                  @categorySelected="getProductsByCategory"
                                  @updateSearchValue="filterProductsBasedOnSearchValue"
   ></products-selection-search-bar>
-  <products-view :products="this.filteredProductsList"
+  <products-view :products="this.filteredProductsList" v-if="showProductsView"
                  ref="refProductsView"
-
+                 @productSelected="executeProductSelected"
   ></products-view>
 
+  <product-details-view v-if="!showProductsView"
+                        :product-id="productId"
+  >
+
+  </product-details-view>
+  <store-footer></store-footer>
 
 
 </div>
@@ -24,11 +30,13 @@ import axios from "axios";
 import storeHeader from "@/components/myStore/storeHeader";
 import productsSelectionSearchBar from "@/components/myStore/productsSelectionSearchBar";
 import productsView from "@/components/myStore/productsView";
+import StoreFooter from "@/components/myStore/storeFooter";
+import ProductDetailsView from "@/components/myStore/productDetailsView";
 
 
 export default {
   name: "mainMyStoreApp",
-  components: {storeHeader, productsSelectionSearchBar, productsView},
+  components: {ProductDetailsView, StoreFooter, storeHeader, productsSelectionSearchBar, productsView},
   mounted() {
     this.getAllProducts();
     this.getAllProductsDetails();
@@ -45,6 +53,9 @@ export default {
       categories:[],
       response:'',
       filteredProductsList: [],
+      showProductsView: true,
+      productId:1,
+
 
 
 }},
@@ -59,8 +70,13 @@ export default {
 
   },
   methods:{
+    executeProductSelected(id){
+      this.showProductsView = false;
+      this.productId = id;
+
+    },
     showHomePage(){
-      this.$refs.refProductsView.showAllProducts();
+      this.showProductsView = true;
     },
     getAllProducts(){
       axios.get(this.dbUrl+'products')
@@ -90,6 +106,7 @@ export default {
       .then(response => {
         this.response = response;
         this.products = response.data;
+        this.filteredProductsList = this.products;
       })
       .catch( error => {
         this.response = error

@@ -2,6 +2,17 @@
 
 <div class="productCardMainContainer animate__animated animate__fadeIn"  >
   <img class="imageStyle" :src="currentPhoto">
+  <div class="brandLabelStyle">
+    {{productProps.brand}}
+  </div>
+
+  <div class="nameLabelStyle">
+    {{productProps.name}}
+  </div>
+
+  <div class="priceLabelStyle">
+    {{productProps.price}} €
+  </div>
 
 </div>
 </template>
@@ -27,7 +38,8 @@ methods:{
       .then(response => {
         this.response = response;
         this.productDetails = response.data;
-        this.currentPhoto = '/myStorePhotos/'+ this.productDetails[0].imagesPath +'/'+ this.currentPhotoIdx.toString()+'.jpeg';
+        this.productDetails = this.productDetails[0];
+        this.currentPhoto = '/myStorePhotos/'+ this.productDetails.imagesPath +'/'+ this.currentPhotoIdx.toString()+'.jpeg';
       })
       .catch( error => {
         this.response = error
@@ -37,6 +49,7 @@ methods:{
       .then(response => {
         this.response = response;
         this.productProps = response.data;
+        this.productProps = this.productProps[0];
       })
       .catch( error => {
         this.response = error
@@ -72,11 +85,43 @@ mounted() {
 .productCardMainContainer:hover {
         transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   transition: 0.3s;
+  z-index: 1;
       }
 
 .imageStyle{
   object-fit:contain;
   max-height: 70%;
   max-width:70%;
+}
+
+.brandLabelStyle{
+  margin: 5px;
+  color: black;
+  font-size: 16px;
+  font-family: Arial;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 80%;
+}
+
+.nameLabelStyle{
+  margin: 5px;
+  color: black;
+  font-size: 16px;
+  font-family: Arial;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 80%;
+}
+
+.priceLabelStyle{
+  margin: 5px;
+  color: #00920c;
+  font-size: 16px;
+  font-family: Arial;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 80%;
 }
 </style>
