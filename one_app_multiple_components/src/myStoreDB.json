@@ -7,7 +7,8 @@
       "stockCount": 100,
       "price": 999,
       "prime": true,
-      "reviewStarsCount": 5
+      "reviewStarsCount": 4,
+      "nrReviews": 1456
     },
     {"id": 2,
       "category": "electronics",
@@ -16,7 +17,8 @@
       "stockCount": 85,
       "price": 799,
       "prime": true,
-      "reviewStarsCount": 4
+      "reviewStarsCount": 3,
+      "nrReviews": 14223
     },
     {"id": 3,
       "category": "electronics",
@@ -25,7 +27,8 @@
       "stockCount": 70,
       "price": 1100,
       "prime": false,
-      "reviewStarsCount": 3
+      "reviewStarsCount": 3,
+      "nrReviews": 1234
     },
 
     {"id": 4,
@@ -35,7 +38,8 @@
       "stockCount": 65,
       "price": 499,
       "prime": true,
-      "reviewStarsCount": 4
+      "reviewStarsCount": 4,
+      "nrReviews": 2397
     },
 
     {"id": 5,
@@ -45,7 +49,8 @@
       "stockCount": 2000,
       "price": 199,
       "prime": true,
-      "reviewStarsCount": 5
+      "reviewStarsCount": 5,
+      "nrReviews": 987
     },
 
     {"id": 6,
@@ -55,7 +60,8 @@
       "stockCount": 1400,
       "price": 99,
       "prime": true,
-      "reviewStarsCount": 4
+      "reviewStarsCount": 4,
+      "nrReviews": 9647
     },
 
     {"id": 7,
@@ -65,92 +71,96 @@
       "stockCount":287,
       "price": 179,
       "prime": true,
-      "reviewStarsCount": 5
+      "reviewStarsCount": 5,
+      "nrReviews": 9754
     }
   ],
   "productsDetails": [
     {
       "id": 1,
-      "colors": [
-        "red",
-        "blue",
-        "grey"
-      ],
-      "description": "this is an iphone 14 ProMax",
+      "description": "\n6,7\" Super Retina XDR Display mit Always On und ProMotion\nDynamic Island, eine magische neue Art, mit dem iPhone zu interagieren\n48 MP Hauptkamera für bis zu 4x höhere Auflösung\nKinomodus jetzt in 4K Dolby Vision mit bis zu 30 fps\nAction Modus für ruckelfreie, frei gefilmte Videos\nEin wichtiges Sicherheitsfeature – die Unfallerkennung, ruft Hilfe, wenn du es nicht kannst\nBatterielaufzeit für den ganzen Tag und bis zu 29 Stunden Videowiedergabe\nA16 Bionic, der ultimative Smartphone Chip. Ultraschneller 5G Mobilfunk.\nBranchenführende Features für Haltbarkeit wie Ceramic Shield und Wasserschutz\niOS 16 gibt dir noch mehr Möglichkeiten zum Personalisieren, Kommunizieren und Teilen",
       "imagesPath": "1",
-      "sizes": ["128 GB", "256 GB"],
+      "options":
+      {
+        "Memory": ["128 GB", "256 GB"],
+        "Color": ["red", "blue", "grey"],
+        "Style Name": ["iPhone 14 Pro Max", "iPhone 14 Pro Max with MagSafe"]
+      },
       "nrImages": 3
     },
     {
       "id": 2,
-      "colors": [
-        "green",
-        "red",
-        "white"
-      ],
-      "description": "this is an iphone 13 Pro",
+      "description": "\n6,1\" Super Retina XDR Display mit ProMotion, das alles schneller und flüssiger macht\nDer Kinomodus fügt automatisch geringe Tiefenschärfe hinzu und verschiebt den Fokus in deinen Videos\nPro Kamera-System mit neuen 12 MP Tele‑, Weitwinkel‑ und Ultraweitwinkel-Objektiven; LiDAR Scanner; 6x optischer Zoombereich; Makrofotografie; Fotografische Stile, ProRes Video, Smart HDR 4, Nachtmodus, Apple ProRAW, 4K HDR Aufnahme mit Dolby Vision\n12 MP TrueDepth Frontkamera mit Nachtmodus, 4K HDR Aufnahme mit Dolby Vision\nA15 Bionic Chip für superschnelle Performance\nBis zu 22 Std. Videowiedergabe\nRobustes Design mit Ceramic Shield\nBranchenführender IP68 Wasserschutz\n5G für superschnelle Downloads und Streaming in höchster Qualität\niOS 15 ist vollgepackt mit neuen Features, damit du mehr mit dem iPhone machen kannst als je zuvor",
       "imagesPath": "2",
-      "sizes": ["128 GB", "256 GB"],
+      "options":
+      {
+        "Memory": ["128 GB", "256 GB"],
+        "Color": ["green", "red", "grey"],
+        "Style Name": ["iPhone 13 Pro", "iPhone 13 Pro with MagSafe"]
+      },
       "nrImages": 3
     },
     {
       "id": 3,
-      "colors": [
+
+      "description": "this is a samsung Galaxy 20x",
+      "imagesPath": "3",
+      "options":
+      {
+        "Memory": ["512 GB", "1 TB"],
+        "Color": [
         "red",
         "blue",
         "grey"
-      ],
-      "description": "this is a samsung Galaxy 20x",
-      "imagesPath": "3",
-      "sizes": ["512 GB", "1 TB"],
+      ]
+      },
+
       "nrImages": 3
     },
     {
       "id": 4,
-      "colors": [
-        "white",
-        "green",
-        "red"
-      ],
       "description": "this is a samsung Galaxy 10smo",
       "imagesPath": "4",
-      "sizes": ["1 TB", "2 TB"],
+      "options":
+      {
+        "Memory": ["1 TB", "2 TB"],
+        "Color": [
+        "red",
+        "blue",
+        "grey"
+      ]
+      },
       "nrImages": 3
     },
     {
       "id": 5,
-      "colors": [
-        "white",
-        "green",
-        "red"
-      ],
       "description": "this is a nike airforce 1 shoes",
       "imagesPath": "5",
-      "sizes": ["38", "39", "40", "41", "42"],
+      "options": {
+        "Size":  ["38", "39", "40", "41", "42"],
+        "Color": ["White"]
+      },
       "nrImages": 3
     },
     {
       "id": 6,
-      "colors": [
-        "white",
-        "yellow",
-        "black"
-      ],
+
       "description": "this is an adidas contintal shoes",
       "imagesPath": "6",
-      "sizes": ["38", "39", "40", "41", "42"],
+      "options": {
+        "Size":  ["38", "39", "40", "41", "42"],
+        "Color": ["White"]
+      },
       "nrImages": 3
     },
      {
       "id": 7,
-      "colors": [
-        "green",
-        "white",
-        "black"
-      ],
       "description": "this is an DocMartens Boots",
       "imagesPath": "7",
-      "sizes": ["38", "39", "40", "41", "42"],
+      "options": {
+        "Size":  ["38", "39", "40", "41", "42"],
+        "Color": ["Black"]
+      },
       "nrImages": 3
     }
   ],

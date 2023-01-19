@@ -135,7 +135,7 @@ export default {
 
     },
     filterProductsBasedOnSearchValue(searchValue){
-
+      this.showProductsView = true;
       this.filteredProductsList = [];
       for (let i=0;i<this.products.length;i++){
         if (this.products[i].name.toLowerCase().includes(searchValue.toLowerCase())

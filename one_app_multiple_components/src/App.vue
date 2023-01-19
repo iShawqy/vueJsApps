@@ -52,13 +52,13 @@ export default {
 
 <style scoped>
   body {
-    width: 100%;
-    height: 100%;
-  font-family: "Lucinda Grande";
-  padding: 0;
-  margin: 0;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    font-family: "Lucinda Grande";
+    padding: 0;
+    margin: 0;
     background-color: #000000;
-    overflow: scroll;
+    /*overflow: scroll;*/
 
 
 }
