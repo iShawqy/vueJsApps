@@ -5,7 +5,7 @@
       "name": "Ibra",
       "email": "ib.sh92@gmail.com",
       "password": "ibra",
-      "status": "Offline"
+      "status": "Online"
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
       "name": "Batman",
       "email": "batman@gmail.com",
       "password": "batman",
-      "status": "Offline",
+      "status": "Online",
       "id": 17
     },
     {
@@ -2316,6 +2316,186 @@
       "creator": "Ash",
       "destination": "Ibra",
       "id": 251
+    },
+    {
+      "content": "hey\n",
+      "status": "unread",
+      "timestamp": "22/1/2023 @ 21:3",
+      "timestampInSec": "1674417831",
+      "creator": "Ibra",
+      "destination": "Ghost",
+      "id": 252
+    },
+    {
+      "content": "whats up?\n",
+      "status": "unread",
+      "timestamp": "22/1/2023 @ 21:3",
+      "timestampInSec": "1674417834",
+      "creator": "Ibra",
+      "destination": "Ghost",
+      "id": 253
+    },
+    {
+      "content": "yoo\n",
+      "status": "unread",
+      "timestamp": "22/1/2023 @ 21:7",
+      "timestampInSec": "1674418062",
+      "creator": "Ibra",
+      "destination": "default",
+      "id": 254
+    },
+    {
+      "content": "how is life?\n",
+      "status": "unread",
+      "timestamp": "22/1/2023 @ 21:7",
+      "timestampInSec": "1674418066",
+      "creator": "Ibra",
+      "destination": "default",
+      "id": 255
+    },
+    {
+      "content": "yoo\n",
+      "status": "read",
+      "timestamp": "22/1/2023 @ 21:9",
+      "timestampInSec": "1674418157",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 256
+    },
+    {
+      "content": "how is life?\n",
+      "status": "read",
+      "timestamp": "22/1/2023 @ 21:9",
+      "timestampInSec": "1674418162",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 257
+    },
+    {
+      "content": "sa\n",
+      "status": "read",
+      "timestamp": "22/1/2023 @ 21:10",
+      "timestampInSec": "1674418204",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 258
+    },
+    {
+      "content": "yo\n",
+      "status": "read",
+      "timestamp": "22/1/2023 @ 21:10",
+      "timestampInSec": "1674418206",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 259
+    },
+    {
+      "content": "i am doning good?\n",
+      "status": "read",
+      "timestamp": "22/1/2023 @ 21:10",
+      "timestampInSec": "1674418212",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 260
+    },
+    {
+      "content": "hey\n",
+      "status": "read",
+      "timestamp": "22/1/2023 @ 21:10",
+      "timestampInSec": "1674418217",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 261
+    },
+    {
+      "content": "?\n",
+      "status": "read",
+      "timestamp": "22/1/2023 @ 21:10",
+      "timestampInSec": "1674418219",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 262
+    },
+    {
+      "content": "are you okey?\n",
+      "status": "read",
+      "timestamp": "22/1/2023 @ 21:10",
+      "timestampInSec": "1674418223",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 263
+    },
+    {
+      "content": "yoo\n",
+      "status": "unread",
+      "timestamp": "22/1/2023 @ 21:11",
+      "timestampInSec": "1674418293",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 264
+    },
+    {
+      "content": "yoo\n",
+      "status": "unread",
+      "timestamp": "22/1/2023 @ 21:11",
+      "timestampInSec": "1674418309",
+      "creator": "Ibra",
+      "destination": "Anne Hathway",
+      "id": 265
+    },
+    {
+      "content": "Hey Batman?\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 9:44",
+      "timestampInSec": "1674463440",
+      "creator": "Ibra",
+      "destination": "Batman",
+      "id": 266
+    },
+    {
+      "content": "yoo ibra\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 9:44",
+      "timestampInSec": "1674463454",
+      "creator": "Batman",
+      "destination": "Ibra",
+      "id": 267
+    },
+    {
+      "content": "how is it going?\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 9:44",
+      "timestampInSec": "1674463459",
+      "creator": "Batman",
+      "destination": "Ibra",
+      "id": 268
+    },
+    {
+      "content": "its going great. How is the joker?\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 9:44",
+      "timestampInSec": "1674463469",
+      "creator": "Ibra",
+      "destination": "Batman",
+      "id": 269
+    },
+    {
+      "content": "not so bad\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 9:44",
+      "timestampInSec": "1674463476",
+      "creator": "Batman",
+      "destination": "Ibra",
+      "id": 270
+    },
+    {
+      "content": "heheh\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 9:44",
+      "timestampInSec": "1674463477",
+      "creator": "Batman",
+      "destination": "Ibra",
+      "id": 271
     }
   ]
 }

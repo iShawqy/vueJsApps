@@ -1,5 +1,5 @@
 <template>
-<div class="mainContainer" @mousemove="updateMousePos($event)"
+<div class="mainContainerMovableElementsMain" @mousemove="updateMousePos($event)"
      @click="executeParentClick($event)"
      @keyup="handleKeyPress($event)" tabindex="0"
      @mousedown="executeParentMouseDown($event)"
@@ -9,7 +9,7 @@
 <!--&gt;-->
   <elements-browser class="elementsBrowser animate__animated animate__fadeInLeft"
 
-                    @addElement="addNewElement" v-if="mousePosX<100">
+                    @addElement="addNewElement" v-if="showElementsbrowser">
 
   </elements-browser>
 
@@ -85,6 +85,7 @@ name: "mainMovableElements",
   return {
     mousePosX: 0,
     mousePosY: 0,
+    showElementsbrowser:true,
     elements: {
       circle: {},
       square: {},
@@ -393,12 +394,17 @@ name: "mainMovableElements",
 </script>
 
 <style scoped>
-    .mainContainer{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-      background-color: #ffffff;
+    .mainContainerMovableElementsMain{
+      position: relative;
+      width: 800px;
+      height: 400px;
+      background-color: #353535;
+      border-radius: 10px;
   }
+    .mainContainerMovableElementsMain:hover{
+      transform: scale(1.03);
+  transition: 0.3s;
+    }
 
     .elementsBrowser{
       position: absolute;

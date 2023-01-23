@@ -1,6 +1,6 @@
 <template>
 
-  <div class="calculatorContainer" >
+  <div class="calculatorContainer" @blur="setBlur(true)" @click="setBlur(false)" tabindex="-1">
     <resultContainer v-model:result="result">
 
     </resultContainer>
@@ -22,6 +22,7 @@ export default {
 
   data() {
     return {
+      blurred:false,
       result: '0',
       actionBtns: ['C', '+/-', '%', '÷',
         'X', '-', '+', '='],
@@ -30,13 +31,17 @@ export default {
     }
   },
   methods: {
+    setBlur(flag){
+    this.blurred = flag;
+  },
     // checkResultLength() {
     //   if (this.result.length > 11) {
     //     this.result = this.result.slice(0, 11);
     //   }
     // },
     executeClick(value) {
-      if (this.actionBtns.includes(value)) {
+      if (!this.blurred){
+        if (this.actionBtns.includes(value)) {
         console.log(value);
         if (value == 'C') {
           this.result = '0';
@@ -102,6 +107,8 @@ export default {
           }
         }
       }
+      }
+
     },
     flushResult() {
       if (this.currentOperation == '÷') {
@@ -123,7 +130,7 @@ export default {
 
   },
   watch:{
-    result(newValue, oldValue) {
+    result(newValue) {
       if (newValue.length > 10) {
         this.result = newValue.slice(0, 10);
         var temp = parseFloat(this.result)
@@ -145,9 +152,14 @@ export default {
       background-color: black;
       width: fit-content;
       height: fit-content;
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 10px 10px 3px #0091b5;
 
-
-      /*border-radius: 20px;*/
 
   }
+.calculatorContainer:hover{
+  transform: scale(1.03);
+  transition: 0.3s;
+}
 </style>

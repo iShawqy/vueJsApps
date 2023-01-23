@@ -3,6 +3,7 @@
 <appleCalculaterButton class="cBtn" v-for="btn in buttons" :value="btn.value"
                          :color="btn.color" :background-color="btn.backgroundColor"
                        @click="calculatorBtnClicked(btn.value)"
+                       :key="btn.value"
 >
 
 </appleCalculaterButton>
@@ -17,6 +18,7 @@ name: "ButtonsContainer",
   components: {appleCalculaterButton},
   data(){
   return {
+
     btnsValues: [
         'C', '+/-', '%', '÷',
         '7', '8', '9', 'X',
@@ -60,7 +62,6 @@ name: "ButtonsContainer",
       '3': '3',
       '+': '+',
       '0': '0',
-      'h': '100',
       '.': '.',
       'Enter': '='
     },
@@ -76,12 +77,16 @@ name: "ButtonsContainer",
         window.addEventListener("keypress", function(e) {
           let dictKeys = Object.keys(this.btnsKeyNamesToValues);
           if (dictKeys.includes(e.key)) {
+
             this.$emit('btnClicked', this.btnsKeyNamesToValues[e.key]);
+
+
           }
 
     }.bind(this));
   },
   methods: {
+
   createBtnsList(){
     for (let i = 0; i < this.btnsValues.length; i++) {
 

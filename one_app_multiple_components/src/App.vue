@@ -1,7 +1,15 @@
 <template>
 
   <div class="mainContainer" >
-    <main-my-store-app></main-my-store-app>
+    <calculator-main></calculator-main>
+    <main-plotting-demo></main-plotting-demo>
+        <SignupForm form-title="Who are you?🙂" >
+    </SignupForm>
+    <main-chatting-app></main-chatting-app>
+    <main-chatting-app></main-chatting-app>
+    <main-movable-elements></main-movable-elements>
+<!--    <main-indloc></main-indloc>-->
+<!--    <main-my-store-app></main-my-store-app>-->
 <!--    <main-editable-questionaire>-->
 
 <!--    </main-editable-questionaire>-->
@@ -32,7 +40,15 @@
 // import mainEditableQuestionaire from "@/components/editableQuestionaire/mainEditableQuestionaire";
 
 // import mainChattingApp from "@/components/chattingApp/mainChattingApp";
-import mainMyStoreApp from "@/components/myStore/mainMyStoreApp";
+// import mainMyStoreApp from "@/components/myStore/mainMyStoreApp";
+// import mainIndloc from "@/components/indlocWithVue/mainIndloc";
+import mainPlottingDemo from "@/components/plottingWithVue/mainPlottingDemo";
+import calculatorMain from "@/components/calculatorContainers/calculatorMain";
+import SignupForm from "@/components/forms/SignupForm";
+import mainChattingApp from "@/components/chattingApp/mainChattingApp";
+import MainMovableElements from "@/components/movableElements/mainMovableElements";
+
+
 
 
 
@@ -40,7 +56,8 @@ import mainMyStoreApp from "@/components/myStore/mainMyStoreApp";
 export default {
 
   name: 'App',
-  components: {mainMyStoreApp},
+  components: {MainMovableElements, mainChattingApp, calculatorMain, mainPlottingDemo, SignupForm},
+
 
 
 
@@ -79,11 +96,15 @@ export default {
 
   /*Uncomment this for allowing your app to use the full screen*/
     .mainContainer{
-    position: absolute;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    width: 100%;
-    height: 100%;
+      /*position: absolute;*/
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #cfcfcf;
       /*background-color: black;*/
     /*left: 50%;*/
     /*  top: 50%;*/

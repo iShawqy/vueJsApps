@@ -472,33 +472,42 @@ watch:{
 
 
 .mainAppContainer{
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  /* width: 600px;*/
+  /*height: 400px;*/
   background-color: #152129;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 5px 5px 3px #00ffc4;
 }
-.homeViewContainer{
-  display: flex;
-  width: fit-content;
-  height: fit-content;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  /*background-color: black;*/
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+.mainAppContainer:hover{
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+/*.homeViewContainer{*/
+/*  display: flex;*/
+/*  width: fit-content;*/
+/*  height: fit-content;*/
+/*  flex-direction: column;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  position: absolute;*/
+/*  !*background-color: black;*!*/
+/*  left: 50%;*/
+/*  top: 50%;*/
+/*  -webkit-transform: translate(-50%, -50%);*/
+/*  transform: translate(-50%, -50%);*/
 
-}
+/*}*/
 
 .chatViewContainer{
   display: flex;
-  width: 70vw;
-  height: 100vh;
-  min-width: 400px;
-  min-height: 400px;
+  width: 100%;
+  height: 100%;
+  min-width: 600px;
+  min-height: 600px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -523,6 +532,7 @@ watch:{
   align-items: flex-start;
   /*position: absolute;*/
   background-color: rgb(32,44,51);
+  border-radius: 10px;
 }
 
 .chatsMainContainer{

@@ -196,7 +196,8 @@ export default {
     }
 
     .customForm:hover {
-        transform: scale(1.01); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        transform: scale(1.03);
+  transition: 0.3s;/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
       }
 
     /*.submitBtn{*/
