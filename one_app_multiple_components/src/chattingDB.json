@@ -12,7 +12,7 @@
       "name": "Ash",
       "email": "ash.gh92@gmail.com",
       "password": "ash",
-      "status": "Online"
+      "status": "Offline"
     },
     {
       "name": "Anne Hathway",
@@ -2427,7 +2427,7 @@
     },
     {
       "content": "yoo\n",
-      "status": "unread",
+      "status": "read",
       "timestamp": "22/1/2023 @ 21:11",
       "timestampInSec": "1674418293",
       "creator": "Ibra",
@@ -2496,6 +2496,78 @@
       "creator": "Batman",
       "destination": "Ibra",
       "id": 271
+    },
+    {
+      "content": "yooo\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 12:58",
+      "timestampInSec": "1674475115",
+      "creator": "Ash",
+      "destination": "Batman",
+      "id": 272
+    },
+    {
+      "content": "hey\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 12:58",
+      "timestampInSec": "1674475121",
+      "creator": "Batman",
+      "destination": "Ash",
+      "id": 273
+    },
+    {
+      "content": "?\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 12:58",
+      "timestampInSec": "1674475124",
+      "creator": "Batman",
+      "destination": "Ash",
+      "id": 274
+    },
+    {
+      "content": "wahts up?\n",
+      "status": "read",
+      "timestamp": "23/1/2023 @ 12:58",
+      "timestampInSec": "1674475133",
+      "creator": "Ash",
+      "destination": "Batman",
+      "id": 275
+    },
+    {
+      "content": "hi\n",
+      "status": "read",
+      "timestamp": "24/1/2023 @ 11:39",
+      "timestampInSec": "1674556775",
+      "creator": "Batman",
+      "destination": "Ash",
+      "id": 276
+    },
+    {
+      "content": "hiii",
+      "timestamp": "24/1/2023 @ 19:36",
+      "status": "read",
+      "timestampInSec": "1674585376",
+      "creator": "Ash",
+      "destination": "Ibra",
+      "id": 277
+    },
+    {
+      "content": "hii\n",
+      "status": "unread",
+      "timestamp": "24/1/2023 @ 19:36",
+      "timestampInSec": "1674585379",
+      "creator": "Ibra",
+      "destination": "Ash",
+      "id": 278
+    },
+    {
+      "content": "hii\n",
+      "status": "unread",
+      "timestamp": "24/1/2023 @ 19:36",
+      "timestampInSec": "1674585395",
+      "creator": "Batman",
+      "destination": "Ibra",
+      "id": 279
     }
   ]
 }

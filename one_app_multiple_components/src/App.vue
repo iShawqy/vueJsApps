@@ -1,13 +1,16 @@
 <template>
 
   <div class="mainContainer" >
-    <calculator-main></calculator-main>
-    <main-plotting-demo></main-plotting-demo>
-        <SignupForm form-title="Who are you?🙂" >
-    </SignupForm>
-    <main-chatting-app></main-chatting-app>
-    <main-chatting-app></main-chatting-app>
-    <main-movable-elements></main-movable-elements>
+    <main-indloc-compass></main-indloc-compass>
+<!--    <calculator-main></calculator-main>-->
+<!--    <main-plotting-demo></main-plotting-demo>-->
+<!--        <SignupForm form-title="Who are you?🙂" >-->
+<!--    </SignupForm>-->
+<!--    <main-chatting-app></main-chatting-app>-->
+<!--    <main-chatting-app></main-chatting-app>-->
+<!--    <main-movable-elements></main-movable-elements>-->
+<!--    <main-my-store-app></main-my-store-app>-->
+<!--    <hello-world-plotly></hello-world-plotly>-->
 <!--    <main-indloc></main-indloc>-->
 <!--    <main-my-store-app></main-my-store-app>-->
 <!--    <main-editable-questionaire>-->
@@ -32,6 +35,7 @@
 </template>
 
 <script>
+
 // import SignupForm from "@/components/forms/SignupForm";
 // import calculatorMain from "@/components/calculatorContainers/calculatorMain";
 // import questionsAnswersContianer from "@/components/questionaire/questionsAnswersContianer";
@@ -42,11 +46,16 @@
 // import mainChattingApp from "@/components/chattingApp/mainChattingApp";
 // import mainMyStoreApp from "@/components/myStore/mainMyStoreApp";
 // import mainIndloc from "@/components/indlocWithVue/mainIndloc";
-import mainPlottingDemo from "@/components/plottingWithVue/mainPlottingDemo";
-import calculatorMain from "@/components/calculatorContainers/calculatorMain";
-import SignupForm from "@/components/forms/SignupForm";
-import mainChattingApp from "@/components/chattingApp/mainChattingApp";
-import MainMovableElements from "@/components/movableElements/mainMovableElements";
+// import mainPlottingDemo from "@/components/plottingWithVue/mainPlottingDemo";
+// import calculatorMain from "@/components/calculatorContainers/calculatorMain";
+// import SignupForm from "@/components/forms/SignupForm";
+// import mainChattingApp from "@/components/chattingApp/mainChattingApp";
+// import MainMovableElements from "@/components/movableElements/mainMovableElements";
+// import mainMyStoreApp from "@/components/myStore/mainMyStoreApp";
+// import MainMyStoreApp from "@/components/myStore/mainMyStoreApp";
+// import helloWorldPlotly from "@/components/vueWithPlotly/helloWorldPlotly";
+// import HelloWorldPlotly from "@/components/vueWithPlotly/helloWorldPlotly";
+import mainIndlocCompass from "@/components/indlocCompass/mainIndlocCompass";
 
 
 
@@ -56,7 +65,7 @@ import MainMovableElements from "@/components/movableElements/mainMovableElement
 export default {
 
   name: 'App',
-  components: {MainMovableElements, mainChattingApp, calculatorMain, mainPlottingDemo, SignupForm},
+  components: {mainIndlocCompass},
 
 
 
