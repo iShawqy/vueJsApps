@@ -1,12 +1,17 @@
 <template>
-  <length-measurements-widget ref="refLenMeasTool"></length-measurements-widget>
+  <div class="toolsContainer">
+    <length-measurements-widget ref="refLenMeasTool"></length-measurements-widget>
+  <length-precision-tool ref="refLengthPrecisionTool"></length-precision-tool>
+    <div class="switchToDebugBtnStyle" @click="switchToDebug">
+    {{switchBtnText}}
+  </div>
+  </div>
+
 <div class="mainIndlocCompassMainContainer">
   <box-position-element :normalized-values="normalizedValues" :detection-width-height="800" ref="refBoxPositionElement"
                         @xPosEmitted="passXPosToLengthMeasTool"
   ></box-position-element>
-  <div class="switchToDebugBtnStyle" @click="switchToDebug">
-    {{switchBtnText}}
-  </div>
+
   <div class="rowContainer" v-if="ready&&debugMode">
     <antenna-gauge v-for="i in 3"
         :position="antennasGaugesList[i-1].postion" :id="antennasGaugesList[i-1].id"
@@ -39,10 +44,11 @@ import axios from "axios";
 import boxPositionElement from "@/components/indlocCompass/boxPositionElement";
 import antennaGauge from "@/components/indlocCompass/antennaGauge";
 import lengthMeasurementsWidget from "@/components/indlocCompass/lengthMeasurementsWidget";
+import lengthPrecisionTool from "@/components/indlocCompass/lengthPrecisionTool";
 
 export default {
   name: "mainIndlocCompass",
-  components: {lengthMeasurementsWidget,antennaGauge,boxPositionElement},
+  components: {lengthPrecisionTool,lengthMeasurementsWidget,antennaGauge,boxPositionElement},
   mounted() {
     this.initAntennasGaugesList();
     setInterval(this.getAntennasSignals, 100);
@@ -68,15 +74,17 @@ export default {
       antennasGaugesList:[],
       normalizedValues:[],
       debugMode: false,
-      switchBtnText: "Debug"
+      switchBtnText: "Debug View"
     }
   },
   methods:{
     switchToDebug(){
       if (this.debugMode){
         this.debugMode = false;
+        this.switchBtnText = "Debug View"
       } else {
         this.debugMode = true;
+        this.switchBtnText = "Default View"
       }
     },
     passXPosToLengthMeasTool(xPos){
@@ -93,6 +101,7 @@ export default {
           this.normalizedValues[i] = this.antennasData[this.antennasMappings[i]]
         }
         this.$refs.refBoxPositionElement.updateBoxPosition();
+        this.$refs.refLengthPrecisionTool.fillBuffers(this.normalizedValues);
 
 
 
@@ -167,8 +176,9 @@ export default {
 }
 
 .switchToDebugBtnStyle{
-  position: absolute;
+
   width: fit-content;
+  padding: 5px;
   height: fit-content;
   color: white;
   background-color: blue;
@@ -176,12 +186,27 @@ export default {
   border-radius: 5px;
   font-family: Arial;
   font-size: 14px;
-  top: 0px;
-  left: 0px;
-  margin: 5px;
+
+  text-align: center;
 }
 .switchToDebugBtnStyle:hover{
   opacity: 1;
+}
+
+.toolsContainer{
+   position: absolute;
+  top:10px;
+  left:10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  /*border: solid black 2px;*/
+  /*background-color: #888888;*/
+  /*box-shadow: 5px 5px 3px #acacac;*/
+  /*border-radius: 5px;*/
 }
 
 </style>

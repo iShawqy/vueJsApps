@@ -17,6 +17,7 @@ export default {
 
   data () {
     return {
+      centeredXY:20,
       xPos:0,
       currentImg: "wrong.png",
       imgWidth:0,
@@ -124,6 +125,22 @@ export default {
           && ((this.x - this.xOffset) +this.objectBoxWidth <= ((this.detectionWidthHeight/2) + this.middleBoxWidth/2))
           && (this.y - this.yOffset)>=((this.detectionWidthHeight/2) - this.middleBoxHeight/2) &&
             ((this.y - this.yOffset) +this.objectBoxHeight <= ((this.detectionWidthHeight/2) + this.middleBoxHeight/2))
+        ){
+          this.middlePositionBoxStyle.border = "solid green 1px";
+           this.middlePositionBoxStyle.background = "rgba(64, 161, 77, 0.4)";
+           this.currentImg = "correct.png";
+
+        } else {
+          this.middlePositionBoxStyle.border = "solid red 1px";
+          this.middlePositionBoxStyle.background = "rgba(224, 56, 101, 0.4)";
+          this.currentImg = "wrong.png";
+        }
+
+    },
+
+    checkCenteredNew(){
+        if (this.x >= ((this.detectionWidthHeight/2) - this.centeredXY) &&  this.x <= ((this.detectionWidthHeight/2) +this.centeredXY)
+            && this.y >= ((this.detectionWidthHeight/2) - this.centeredXY) && this.y <= ((this.detectionWidthHeight/2) + this.centeredXY)
         ){
           this.middlePositionBoxStyle.border = "solid green 1px";
            this.middlePositionBoxStyle.background = "rgba(64, 161, 77, 0.4)";

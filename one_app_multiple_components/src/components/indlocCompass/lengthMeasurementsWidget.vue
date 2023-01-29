@@ -1,16 +1,25 @@
 <template>
 <div class="mainLengthMeasurementWidgetContainer">
+    <div class="labelsStyle">Approx. length</div>
   <div class="measurementsButtonsContainer">
-    <div class="measurementsButtonsStyle" @click="takeFirstMeasurement" v-if="!measurementDone">
-      Take 1st meas.
-    </div>
-    <div class="measurementsButtonsStyle" @click="takeSecondMeasurement" v-if="!measurementDone">
-      Take 2nd meas.
-    </div>
+
+         <button class="buttonCustomStyle" @click="takeFirstMeasurement" :disabled="firstBtnDisabled">
+           Take 1st meas.
+         </button>
+
+
+      <button class="buttonCustomStyle" @click="takeSecondMeasurement" :disabled="secondBtnDisabled">
+        Take 2nd meas.
+      </button>
+
+
   </div>
-  <div class="labelsStyle">
+  <div class="instructionsContainer">
+    <div class="labelsStyleInstructions">
     {{instructions}}
   </div>
+  </div>
+
   <div class="labelsStyle">
     Length = {{length}}
   </div>
@@ -32,6 +41,8 @@ export default {
   // },
   data () {
     return {
+      firstBtnDisabled:false,
+      secondBtnDisabled:true,
       firstMeasBuffer:[],
       firstBufferAvg:0,
       secondBufferAvg:0,
@@ -48,12 +59,12 @@ export default {
   },
   methods:{
     fillBuffers(xPos){
-
       if (this.fillFirstBuffer) {
         if (this.firstMeasBuffer.length < this.bufferLimit) {
           this.firstMeasBuffer.push(xPos)
         } else {
           this.fillFirstBuffer = false;
+          this.secondBtnDisabled = false;
           this.instructions = "Place the left edge of the " +
               "object exactly on the first mark then click on the 'Take 2nd meas.' button";
         }
@@ -72,11 +83,13 @@ export default {
 
     },
     takeFirstMeasurement(){
+      this.firstBtnDisabled = true;
       this.firstMeasBuffer = [];
       this.fillFirstBuffer = true;
       this.instructions = "Measuring...";
     },
     takeSecondMeasurement(){
+      this.secondBtnDisabled = true;
       this.secondMeasBuffer = [];
       this.fillSecondBuffer = true;
       this.instructions = "Measuring...";
@@ -84,6 +97,8 @@ export default {
     },
     startOver(){
       this.measurementDone = false
+      this.firstBtnDisabled = false;
+
       this.instructions = "Place the object exactly in the middle and click on 'Take 1st meas.' button";
       this.length = 0;
       this.width = 0;
@@ -99,12 +114,13 @@ export default {
 
 <style scoped>
 .mainLengthMeasurementWidgetContainer{
-  position: absolute;
-  top:10px;
-  left:10px;
+  /*position: absolute;*/
+  /*top:10px;*/
+  /*left:10px;*/
+  margin: 10px;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 300px;
   width: fit-content;
   border: solid black 2px;
   background-color: #2d2d2d;
@@ -113,15 +129,18 @@ export default {
   font-family: Arial;
   font-size: 14px;
   color: #ffffff;
+
+
 }
 
 .measurementsButtonsContainer{
   display: flex;
   flex-direction: row;
   width: fit-content;
-  height: fit-content;
+  height: 50px;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 .measurementsButtonsStyle{
@@ -147,13 +166,39 @@ export default {
 
 }
 
-/*.labelsStyleInstructions{*/
-/*  height: 20px;*/
-/*  width: 160px;*/
-/*  margin: 10px;*/
-/*  font-family: Arial;*/
-/*  font-size: 16px;*/
-/*  color: #ffffff;*/
+.buttonCustomStyle{
+  width: 80px;
+  margin: 10px;
+  height: fit-content;
+  background-color: #3e30ff;
+  border-radius: 10px;
+  opacity: 0.6;
+  text-align: center;
+  font-family: Arial;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+}
 
-/*}*/
+.buttonCustomStyle:hover{
+  opacity: 1;
+}
+
+
+.instructionsContainer{
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  width: 80%;
+}
+.labelsStyleInstructions{
+  width: 200px;
+  height: fit-content;
+  font-family: Arial;
+  font-size: 16px;
+  color: #00ba5a;
+  font-style: italic;
+  margin: 10px;
+
+}
 </style>
