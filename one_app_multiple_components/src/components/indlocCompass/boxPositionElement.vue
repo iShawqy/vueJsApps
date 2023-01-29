@@ -8,6 +8,7 @@
 export default {
   name: "boxPositionElement",
   props:["normalizedValues", "detectionWidthHeight"],
+  emits: ["xPosEmitted"],
   mounted() {
     this.initBoxProps();
     // setInterval(this.updateBoxPosition, 100);
@@ -16,6 +17,7 @@ export default {
 
   data () {
     return {
+      xPos:0,
       currentImg: "wrong.png",
       imgWidth:0,
       imgHeight:0,
@@ -87,10 +89,14 @@ export default {
         if (this.leftRightRatio>= 1){
           // this.x = (this.detectionWidthHeight/2) + (1-)
           this.x = (this.detectionWidthHeight/2) +((this.leftRightRatio-1) * (this.detectionWidthHeight/2))/this.signalToPxRatio;
+          this.xPos =((this.leftRightRatio-1)*17)/this.signalToPxRatio
+          this.$emit("xPosEmitted",this.xPos)
 
         } else {
           this.leftRightRatio = this.normalizedValues[3]/this.normalizedValues[5];
           this.x = ((this.leftRightRatio-1) * (this.detectionWidthHeight/2))/this.signalToPxRatio;
+          this.xPos =((this.leftRightRatio-1)*17)/this.signalToPxRatio
+          this.$emit("xPosEmitted",this.xPos)
           this.x = (this.detectionWidthHeight/2) -this.x;
 
         }
@@ -107,6 +113,7 @@ export default {
         // this.smoothPos();
         this.positionBoxStyle.left = (this.x - this.xOffset).toString() + 'px';
         this.positionBoxStyle.top = (this.y - this.yOffset).toString() + 'px';
+
         this.checkCentered();
 
 

@@ -29,7 +29,8 @@ export default {
         flexDirection: "column",
         width: "30%",
         height: "30px",
-        justifyContent: "center"
+        justifyContent: "center",
+        opacity:"0.6",
       },
       outerContainerStyle: {
         width: "30%",

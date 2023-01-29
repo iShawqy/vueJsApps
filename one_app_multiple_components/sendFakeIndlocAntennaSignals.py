@@ -2,15 +2,10 @@ import requests
 import numpy as np
 import random
 import time
-
-
-import numpy as np
-import matplotlib.pyplot as plt
 import os
 import json
-ants = 9
 
-input_dir = "kkAufbau"
+input_dir = "kkAufbau_movingObjects"
 folders = os.listdir(os.path.join(os.getcwd(), input_dir))
 all_data_dict = {}
 objectsNames = []
@@ -59,25 +54,59 @@ def get_all_for_f(object,c,ant=0, real_imag="real"):
 
     return result
 
+f = fs[-1]
+c = cs[-1]
+real_imag = "imag"
 
-antennasIds = [0, 7,6,1,8,5,2,3,4]
+signals = []
+for objectName in objectsNames:
+    for idx in range(len(all_data_dict[objectName][f][c][0])):
+        row = []
+        for ant in range(ants):
+            row.append(np.abs(all_data_dict[objectName][f][c][ant][idx][real_imag]))
+        sumRow = np.sum(row)
+        normalizedRow = []
+        for ant in range(ants):
+            normalizedRow.append(row[ant]/sumRow)
+        signals.append(normalizedRow)
+
+for i in range(0,len(signals),10):
+    time.sleep(0.1)
+
+#
+    data = {
+        "normalized": signals[i]
+    }
+    try:
+        requests.put('http://localhost:3004/antennasSignals/1', data=data)
+
+    except requests.exceptions.ConnectionError as e:
+        print("reconnecting")
 
 
-startTime = time.time()
 
-while True:
-    if time.time() - startTime > 0.4:
-        for id in antennasIds:
-            time.sleep(0.05)
 
-            data = {
-                "id": id,
-                "real": random.uniform(-3, 3),
-                "imag": random.uniform(-3, 3),
-            }
-            try:
-                requests.put("http://localhost:8976/antennas/"+str(id), data=data)
 
-            except requests.exceptions.ConnectionError as e:
-                print("reconnecting")
-        startTime = time.time()
+
+#
+# antennasIds = [0, 7,6,1,8,5,2,3,4]
+#
+#
+# startTime = time.time()
+#
+# while True:
+#     if time.time() - startTime > 0.4:
+#         for id in antennasIds:
+#             time.sleep(0.05)
+#
+#             data = {
+#                 "id": id,
+#                 "real": random.uniform(-3, 3),
+#                 "imag": random.uniform(-3, 3),
+#             }
+#             try:
+#                 requests.put("http://localhost:8976/antennas/"+str(id), data=data)
+#
+#             except requests.exceptions.ConnectionError as e:
+#                 print("reconnecting")
+#         startTime = time.time()

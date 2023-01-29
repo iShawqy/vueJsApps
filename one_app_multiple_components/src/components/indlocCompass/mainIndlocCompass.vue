@@ -1,27 +1,33 @@
 <template>
+  <length-measurements-widget ref="refLenMeasTool"></length-measurements-widget>
 <div class="mainIndlocCompassMainContainer">
-  <box-position-element :normalized-values="normalizedValues" :detection-width-height="800" ref="refBoxPositionElement"></box-position-element>
-<!--  <div class="rowContainer" v-if="ready">-->
-<!--    <antenna-gauge v-for="i in 3"-->
-<!--        :position="antennasGaugesList[i-1].postion" :id="antennasGaugesList[i-1].id"-->
-<!--                   :key="antennasGaugesList[i-1].id"-->
-<!--                 :fill-level="antennasGaugesList[i-1].fillLevel"-->
-<!--  ></antenna-gauge>-->
-<!--  </div>-->
-<!--  <div class="rowContainer" v-if="ready">-->
-<!--    <antenna-gauge v-for="i in 3"-->
-<!--        :position="antennasGaugesList[i-1+3].postion" :id="antennasGaugesList[i-1+3].id"-->
-<!--                   :key="antennasGaugesList[i-1+3].id"-->
-<!--                 :fill-level="antennasGaugesList[i-1+3].fillLevel"-->
-<!--  ></antenna-gauge>-->
-<!--  </div>-->
-<!--  <div class="rowContainer" v-if="ready">-->
-<!--    <antenna-gauge v-for="i in 3"-->
-<!--        :position="antennasGaugesList[i-1+6].postion" :id="antennasGaugesList[i-1+6].id"-->
-<!--                   :key="antennasGaugesList[i-1+6].id"-->
-<!--                 :fill-level="antennasGaugesList[i-1+6].fillLevel"-->
-<!--  ></antenna-gauge>-->
-<!--  </div>-->
+  <box-position-element :normalized-values="normalizedValues" :detection-width-height="800" ref="refBoxPositionElement"
+                        @xPosEmitted="passXPosToLengthMeasTool"
+  ></box-position-element>
+  <div class="switchToDebugBtnStyle" @click="switchToDebug">
+    {{switchBtnText}}
+  </div>
+  <div class="rowContainer" v-if="ready&&debugMode">
+    <antenna-gauge v-for="i in 3"
+        :position="antennasGaugesList[i-1].postion" :id="antennasGaugesList[i-1].id"
+                   :key="antennasGaugesList[i-1].id"
+                 :fill-level="antennasGaugesList[i-1].fillLevel"
+  ></antenna-gauge>
+  </div>
+  <div class="rowContainer" v-if="ready&&debugMode">
+    <antenna-gauge v-for="i in 3"
+        :position="antennasGaugesList[i-1+3].postion" :id="antennasGaugesList[i-1+3].id"
+                   :key="antennasGaugesList[i-1+3].id"
+                 :fill-level="antennasGaugesList[i-1+3].fillLevel"
+  ></antenna-gauge>
+  </div>
+  <div class="rowContainer" v-if="ready&&debugMode">
+    <antenna-gauge v-for="i in 3"
+        :position="antennasGaugesList[i-1+6].postion" :id="antennasGaugesList[i-1+6].id"
+                   :key="antennasGaugesList[i-1+6].id"
+                 :fill-level="antennasGaugesList[i-1+6].fillLevel"
+  ></antenna-gauge>
+  </div>
 
 <!--  <div :style="[objectBoxSizeStyle]"></div>-->
 </div>
@@ -31,11 +37,12 @@
 // import antennaGauge from "@/components/indlocCompass/antennaGauge";
 import axios from "axios";
 import boxPositionElement from "@/components/indlocCompass/boxPositionElement";
-// import antennaGauge from "@/components/indlocCompass/antennaGauge";
+import antennaGauge from "@/components/indlocCompass/antennaGauge";
+import lengthMeasurementsWidget from "@/components/indlocCompass/lengthMeasurementsWidget";
 
 export default {
   name: "mainIndlocCompass",
-  components: {boxPositionElement},
+  components: {lengthMeasurementsWidget,antennaGauge,boxPositionElement},
   mounted() {
     this.initAntennasGaugesList();
     setInterval(this.getAntennasSignals, 100);
@@ -46,6 +53,7 @@ export default {
       antennasData:[],
       response:null,
       ready: false,
+
       antennasMappings:{
         0:6,
         1:7,
@@ -59,9 +67,22 @@ export default {
       },
       antennasGaugesList:[],
       normalizedValues:[],
+      debugMode: false,
+      switchBtnText: "Debug"
     }
   },
   methods:{
+    switchToDebug(){
+      if (this.debugMode){
+        this.debugMode = false;
+      } else {
+        this.debugMode = true;
+      }
+    },
+    passXPosToLengthMeasTool(xPos){
+
+      this.$refs.refLenMeasTool.fillBuffers(xPos);
+    },
     getAntennasSignals(){
       axios.get(this.indlocCompassDBURL)
       .then(response => {
@@ -143,6 +164,24 @@ export default {
   height: 250px;
   justify-content: space-around;
   align-items: center;
+}
+
+.switchToDebugBtnStyle{
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  color: white;
+  background-color: blue;
+  opacity: 0.6;
+  border-radius: 5px;
+  font-family: Arial;
+  font-size: 14px;
+  top: 0px;
+  left: 0px;
+  margin: 5px;
+}
+.switchToDebugBtnStyle:hover{
+  opacity: 1;
 }
 
 </style>
